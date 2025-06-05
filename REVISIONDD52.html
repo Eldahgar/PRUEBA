@@ -1,0 +1,1559 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía Completa D&D Revisión 2024: Comparativa, Reglas, Clases y Asistentes IA</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=MedievalSharp&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/generated/icons/sun.svg"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/generated/icons/moon.svg"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/generated/icons/arrow-up.svg"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/generated/icons/menu.svg"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/generated/icons/x.svg"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lucide-static@latest/generated/icons/chevron-down.svg"></script>
+
+
+    <style>
+        :root {
+            --font-main: 'Inter', sans-serif;
+            --font-special: 'MedievalSharp', cursive;
+
+            /* --- Tema Claro (Por defecto) --- */
+            --color-bg-page: #fdf5e6;
+            --color-text-body: #3a241d;
+            --color-primary: #8B0000; /* Rojo D&D */
+            --color-text-on-primary: #fff;
+            --color-bg-card: #fff8f0;
+            --color-border-card: #d2b48c;
+            --color-text-card-h3: #5c3a21;
+            --color-text-card-h4: #7a4f30;
+            --color-badge-new-bg: #228B22;
+            --color-badge-changed-bg: #DAA520;
+            --color-badge-changed-text: #3a241d;
+            --color-badge-guide-bg: #4682B4;
+            --color-badge-ai-bg: #8A2BE2;
+            --color-table-header-bg: #eee0b9;
+            --color-button-class-bg: #6c2c2c;
+            --color-button-class-text: #fff5e1;
+            --color-button-class-border: #4a1e1e;
+            --color-button-class-hover-bg: var(--color-primary);
+            --color-button-ai-bg: var(--color-badge-ai-bg);
+            --color-button-ai-text: #fff;
+            --color-button-ai-hover-bg: #6A1B9A;
+            --color-link: var(--color-primary);
+            --color-link-hover: #600000;
+            --color-sidebar-bg: #f0e6d2;
+            --color-sidebar-text: #4a2c2a;
+            --color-sidebar-link-hover-bg: #e0d8c9;
+            --color-accordion-bg: #faf0e6;
+            --color-accordion-hover-bg: #f5e8d8;
+            --color-tab-active-bg: var(--color-primary);
+            --color-tab-active-text: #fff;
+            --color-tab-inactive-bg: #e0d8c9;
+            --color-tab-inactive-text: var(--color-text-body);
+            --color-input-bg: #fff;
+            --color-input-border: var(--color-border-card);
+            --color-button-primary-bg: var(--color-primary);
+            --color-button-primary-text: #fff;
+            --color-button-primary-hover-bg: #600000;
+        }
+
+        html.dark {
+            /* --- Tema Oscuro "Nocturno" --- */
+            --color-bg-page: #232a3b; /* Azul noche profundo */
+            --color-text-body: #c8d1e0; /* Texto gris azulado claro */
+            --color-primary: #e57373; /* Rojo D&D más suave para modo oscuro */
+            --color-text-on-primary: #121212;
+            --color-bg-card: #2f3b52; /* Azul pizarra oscuro */
+            --color-border-card: #4a5568; /* Gris azulado medio */
+            --color-text-card-h3: #e0e7ff; /* Azul muy pálido */
+            --color-text-card-h4: #a8b2d1; /* Azul grisáceo */
+            --color-badge-new-bg: #66bb6a; /* Verde más suave */
+            --color-badge-changed-bg: #ffee58; /* Amarillo más suave */
+            --color-badge-changed-text: #2c3e50;
+            --color-badge-guide-bg: #64b5f6; /* Azul más suave */
+            --color-badge-ai-bg: #ba68c8; /* Violeta más suave */
+            --color-table-header-bg: #3a4760;
+            --color-button-class-bg: #5c3f3f;
+            --color-button-class-text: #e0e7ff;
+            --color-button-class-border: #3e2727;
+            --color-button-class-hover-bg: var(--color-primary);
+            --color-button-ai-bg: var(--color-badge-ai-bg);
+            --color-button-ai-text: #fff;
+            --color-button-ai-hover-bg: #9c4d98;
+            --color-link: var(--color-primary);
+            --color-link-hover: #ff9e80;
+            --color-sidebar-bg: #1e2635;
+            --color-sidebar-text: #c8d1e0;
+            --color-sidebar-link-hover-bg: #2f3b52;
+            --color-accordion-bg: #2a3447;
+            --color-accordion-hover-bg: #344058;
+            --color-tab-active-bg: var(--color-primary);
+            --color-tab-active-text: #121212;
+            --color-tab-inactive-bg: #3a4760;
+            --color-tab-inactive-text: var(--color-text-body);
+            --color-input-bg: #2f3b52;
+            --color-input-border: var(--color-border-card);
+            --color-button-primary-bg: var(--color-primary);
+            --color-button-primary-text: #121212;
+            --color-button-primary-hover-bg: #ff9e80;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--color-bg-page); 
+            color: var(--color-text-body); 
+            scroll-behavior: smooth;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .font-special { font-family: var(--font-special); }
+        .header-bg {
+            background-color: var(--color-primary); 
+            color: var(--color-text-on-primary);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .section-title {
+            border-bottom: 2px solid var(--color-primary);
+            padding-bottom: 0.5rem; margin-top: 2rem; margin-bottom: 1.5rem;
+            font-size: 1.85rem; font-weight: 700;
+            transition: border-color 0.3s ease;
+        }
+        .card {
+            background-color: var(--color-bg-card); 
+            border: 1px solid var(--color-border-card); 
+            border-radius: 0.75rem; padding: 1.75rem; margin-bottom: 1.5rem;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        html.dark .card { box-shadow: 0 6px 12px rgba(0,0,0,0.3); }
+        .card h3 {
+            color: var(--color-text-card-h3); 
+            font-size: 1.35rem; margin-bottom: 1rem; padding-bottom: 0.5rem;
+            border-bottom: 1px dashed var(--color-border-card);
+            transition: color 0.3s ease, border-color 0.3s ease;
+        }
+        /* Asegurar que los badges dentro de h3 tengan su color de texto correcto y no hereden el del h3 */
+        .card h3 .badge { color: var(--color-text-on-primary) !important; } /* Base para badges en h3 */
+        .card h3 .badge-changed { color: var(--color-badge-changed-text) !important; } /* Específico para badge-changed en h3 */
+
+
+        .card h4 {
+            color: var(--color-text-card-h4);
+            font-size: 1.15rem; margin-top: 1rem; margin-bottom: 0.5rem; font-weight: 600;
+            transition: color 0.3s ease;
+        }
+        .badge {
+            background-color: var(--color-primary); color: var(--color-text-on-primary);
+            padding: 0.3rem 0.8rem; border-radius: 0.3rem; font-size: 0.9rem;
+            display: inline-block; margin-right: 0.5rem; margin-bottom: 0.5rem; font-weight: 500;
+             transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        .badge-new { background-color: var(--color-badge-new-bg); }
+        .badge-changed { background-color: var(--color-badge-changed-bg); color: var(--color-badge-changed-text); }
+        .badge-guide { background-color: var(--color-badge-guide-bg); }
+        .badge-ai { background-color: var(--color-badge-ai-bg); }
+
+        ul { list-style-type: disc; margin-left: 1.75rem; }
+        li { margin-bottom: 0.6rem; }
+        ul ul { margin-top: 0.4rem; list-style-type: circle; margin-left:1.25rem; } /* Indentación para sub-listas */
+        ul ul li { margin-bottom: 0.4rem; }
+
+
+        .comparison-table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
+        .comparison-table th, .comparison-table td {
+            border: 1px solid var(--color-border-card);
+            padding: 0.85rem; text-align: left;
+            transition: border-color 0.3s ease;
+        }
+        .comparison-table th {
+            background-color: var(--color-table-header-bg);
+            transition: background-color 0.3s ease;
+        }
+        .comparison-table td:first-child { font-weight: bold; width: 30%; }
+
+        .class-button-container { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 1rem; }
+        .class-button {
+            background-color: var(--color-button-class-bg); color: var(--color-button-class-text);
+            padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease, border-color 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2); border: 1px solid var(--color-button-class-border);
+        }
+        .class-button:hover {
+            background-color: var(--color-button-class-hover-bg); transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+        html.dark .class-button { box-shadow: 0 2px 4px rgba(0,0,0,0.4); }
+        html.dark .class-button:hover { box-shadow: 0 4px 8px rgba(0,0,0,0.5); }
+
+
+        .highlight-term { font-weight: 600; color: var(--color-primary); transition: color 0.3s ease; }
+
+        /* Estilos para el Generador IA (comunes a ambos) */
+        .ai-generator-container {
+            margin-top: 1.5rem; padding-top: 1.5rem;
+            border-top: 1px solid var(--color-border-card);
+            transition: border-color 0.3s ease;
+        }
+        .ai-generator-textarea {
+            width: 100%; padding: 0.75rem;
+            border: 1px solid var(--color-input-border);
+            border-radius: 0.5rem; background-color: var(--color-input-bg);
+            color: var(--color-text-body); min-height: 80px; margin-bottom: 1rem;
+            font-family: var(--font-main); resize: vertical;
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .ai-generator-button {
+            background-color: var(--color-button-ai-bg); color: var(--color-button-ai-text);
+            padding: 0.75rem 1.5rem; border-radius: 0.5rem; font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+            cursor: pointer; border: none; box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .ai-generator-button:hover {
+            background-color: var(--color-button-ai-hover-bg); transform: translateY(-2px);
+        }
+        .ai-generator-button:disabled {
+            background-color: #ccc; cursor: not-allowed; transform: none; box-shadow: none;
+        }
+        html.dark .ai-generator-button:disabled { background-color: #555; }
+
+        .ai-result-area {
+            margin-top: 1rem; padding: 1rem;
+            border: 1px dashed var(--color-badge-ai-bg);
+            border-radius: 0.5rem; background-color: var(--color-bg-card);
+            min-height: 100px; white-space: pre-wrap;
+            transition: background-color 0.3s ease, border-color 0.3s ease;
+        }
+        .loading-spinner {
+            display: inline-block; width: 20px; height: 20px;
+            border: 3px solid rgba(0,0,0,.3);
+            border-radius: 50%; border-top-color: var(--color-button-ai-bg);
+            animation: spin 1s ease-in-out infinite; margin-left: 10px; vertical-align: middle;
+        }
+        html.dark .loading-spinner { border-top-color: var(--color-badge-ai-bg); border: 3px solid rgba(255,255,255,.3); }
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        /* Botón Volver Arriba */
+        #scrollTopBtn {
+            position: fixed; bottom: 20px; right: 20px;
+            background-color: var(--color-button-primary-bg); color: var(--color-button-primary-text);
+            border: none; border-radius: 50%;
+            width: 50px; height: 50px;
+            font-size: 24px; cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            display: none; /* Oculto por defecto */
+            opacity: 0;
+            transition: opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+            z-index: 1000;
+        }
+        #scrollTopBtn:hover { transform: scale(1.1); }
+        #scrollTopBtn.show { display: flex; align-items: center; justify-content:center; opacity: 1; }
+
+        /* Menú Lateral (Sidebar) */
+        #sidebar {
+            position: fixed; top: 0; left: -300px; /* Oculto por defecto */
+            width: 300px; height: 100%;
+            background-color: var(--color-sidebar-bg);
+            padding-top: 70px; /* Espacio para los botones de cerrar y tema */
+            box-shadow: 2px 0 10px rgba(0,0,0,0.1);
+            transition: left 0.3s ease, background-color 0.3s ease;
+            z-index: 2000;
+            overflow-y: auto;
+        }
+        html.dark #sidebar { box-shadow: 2px 0 10px rgba(0,0,0,0.4); }
+        #sidebar.open { left: 0; }
+        #sidebar a {
+            padding: 12px 18px; text-decoration: none;
+            font-size: 1.1rem; color: var(--color-sidebar-text);
+            display: block;
+            transition: background-color 0.2s ease, color 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+        #sidebar a:hover { 
+            background-color: var(--color-sidebar-link-hover-bg);
+            border-left-color: var(--color-primary);
+        }
+        #sidebar .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 15px;
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+        }
+        #sidebar .close-btn, #sidebar .theme-toggle-btn-sidebar {
+            background: none; border: none; font-size: 1.8rem;
+            cursor: pointer; color: var(--color-sidebar-text); padding: 5px;
+        }
+
+
+        /* Botón Hamburguesa para abrir Sidebar y Botón de Tema en Header */
+        .header-controls { display: flex; align-items: center; gap: 10px; }
+        .menu-toggle-btn, .theme-toggle-btn-header {
+            background-color: transparent;
+            color: var(--color-text-on-primary);
+            border: none; padding: 8px; border-radius: 0.3rem;
+            cursor: pointer; display: flex; align-items:center; justify-content:center;
+        }
+        .menu-toggle-btn:hover, .theme-toggle-btn-header:hover { background-color: rgba(255,255,255,0.1); }
+        
+
+        /* Acordeones */
+        .accordion-item .accordion-header {
+            background-color: var(--color-accordion-bg);
+            color: var(--color-text-body);
+            cursor: pointer; padding: 1rem; width: 100%;
+            border: none; text-align: left;
+            outline: none; font-size: 1.15rem; font-weight: 600;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border-bottom: 1px solid var(--color-border-card);
+            display: flex; justify-content: space-between; align-items: center;
+        }
+        .accordion-container .accordion-item:first-child .accordion-header { border-top-left-radius: 0.5rem; border-top-right-radius: 0.5rem;}
+        /* El último item del acordeón solo tiene borde inferior si NO está activo. Si está activo, el borde lo pone el contenido */
+        .accordion-container .accordion-item:last-child .accordion-header { 
+            border-bottom-left-radius: 0.5rem; 
+            border-bottom-right-radius: 0.5rem;
+            border-bottom: 1px solid var(--color-border-card); /* Borde por defecto */
+        }
+        .accordion-container .accordion-item:last-child.active .accordion-header {
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+            /* El borde inferior se gestiona por el contenido activo */
+        }
+         .accordion-container .accordion-item.active .accordion-header {
+            border-bottom: 1px solid var(--color-border-card); /* Borde cuando está activo y no es el último, o es el último y el contenido se expande */
+        }
+         .accordion-container .accordion-item:last-child:not(.active) .accordion-header {
+            border-bottom: none; /* Sin borde inferior si es el último y no está activo */
+        }
+
+
+
+        .accordion-item .accordion-header:hover { background-color: var(--color-accordion-hover-bg); }
+        .accordion-item .accordion-content {
+            padding: 0 1rem; background-color: var(--color-bg-card);
+            max-height: 0; overflow: hidden;
+            transition: max-height 0.35s ease-out, padding 0.35s ease-out, border-color 0.3s ease;
+             border-bottom-left-radius: 0.5rem; 
+            border-bottom-right-radius: 0.5rem;
+        }
+         .accordion-item.active .accordion-content {
+            padding: 1.5rem 1rem; /* Más padding cuando está abierto */
+            border-bottom: 1px solid var(--color-border-card);
+            /* max-height establecido por JS */
+        }
+        .accordion-item:last-child.active .accordion-content {
+             border-bottom-left-radius: 0.5rem; 
+             border-bottom-right-radius: 0.5rem;
+        }
+
+        .accordion-item .accordion-header .lucide-chevron-down { transition: transform 0.3s ease; }
+        .accordion-item.active .accordion-header .lucide-chevron-down { transform: rotate(180deg); }
+
+        /* Pestañas (Tabs) */
+        .tabs-container { margin-bottom: 1.5rem; }
+        .tab-buttons { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; border-bottom: 2px solid var(--color-border-card); padding-bottom:0.5rem;}
+        .tab-button {
+            padding: 0.75rem 1.25rem; cursor: pointer;
+            border: none; 
+            border-bottom: 3px solid transparent; /* Borde inferior para indicar activo */
+            background-color: transparent; /* Fondo transparente */
+            color: var(--color-text-body);
+            font-weight: 600; font-size: 1rem;
+            transition: color 0.3s ease, border-color 0.3s ease;
+            margin-bottom: -2px; /* Para que el borde se alinee con el del contenedor */
+        }
+        .tab-button:hover {
+            color: var(--color-primary);
+        }
+        .tab-button.active {
+            color: var(--color-primary);
+            border-bottom-color: var(--color-primary);
+        }
+        .tab-content { display: none; }
+        .tab-content.active { display: block; animation: fadeIn 0.5s; }
+
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+        /* Filtro de búsqueda para clases */
+        #classFilterInput {
+            padding: 0.75rem; border: 1px solid var(--color-input-border);
+            border-radius: 0.5rem; width: 100%; max-width: 400px;
+            margin-bottom: 1.5rem; background-color: var(--color-input-bg);
+            color: var(--color-text-body);
+            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+        }
+        .filter-match { /* Clase para resaltar texto en el filtro, si se implementa */ }
+
+        /* Animaciones generales de entrada */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Estilo para el icono lucide dentro de botones */
+        .lucide { pointer-events: none; /* Para que no interfiera con el clic del botón */ }
+
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Menú Lateral (Sidebar) -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <button id="themeToggleBtnSidebar" class="theme-toggle-btn-sidebar" aria-label="Cambiar tema">
+                <!-- Icono se cambiará con JS -->
+            </button>
+            <button id="closeSidebarBtn" class="close-btn" aria-label="Cerrar menú">
+                <svg data-lucide="x" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        <h3 class="font-special text-2xl p-4 mt-8 text-center" style="color: var(--color-sidebar-text);">Navegación</h3>
+        <a href="#introduccion">Introducción</a>
+        <a href="#asistente-reglas-ia">Asistente Reglas IA</a>
+        <a href="#filosofia">Filosofía 2024</a>
+        <a href="#creacion-personajes">Creación Personajes</a>
+        <a href="#reglas-juego">Reglas Generales</a>
+        <a href="#guia-combate-novatos">Guía Combate</a>
+        <a href="#guia-magia-novatos">Guía Magia</a>
+        <a href="#cambios-clase-detallados">Detalles por Clase</a>
+        <a href="#conclusion">Conclusión</a>
+    </nav>
+
+    <!-- Cabecera -->
+    <header class="header-bg p-4 shadow-lg sticky top-0 z-[1001]"> <!-- z-index un poco menor que sidebar -->
+        <div class="container mx-auto flex justify-between items-center">
+            <button id="openSidebarBtn" class="menu-toggle-btn md:hidden" aria-label="Abrir menú">
+                 <svg data-lucide="menu" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <div class="text-center md:text-left flex-grow md:flex-grow-0">
+                 <h1 class="text-2xl md:text-3xl font-bold font-special leading-tight">D&D: Revisión 2024</h1>
+                 <p class="text-xs md:text-sm hidden sm:block">Guía Detallada y Asistentes IA</p>
+            </div>
+            <div class="header-controls">
+                <button id="themeToggleBtnHeader" class="theme-toggle-btn-header" aria-label="Cambiar tema">
+                    <!-- Icono se cambiará con JS -->
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <main class="container mx-auto p-4 md:p-6">
+
+        <section id="introduccion" class="card fade-in-section">
+            <h2 class="section-title font-special">Introducción: La Evolución Detallada</h2>
+            <p>La revisión de 2024 de Dungeons & Dragons refina y expande la 5ª Edición. Aunque se mantiene la compatibilidad con el material previo, los cambios buscan modernizar, equilibrar y mejorar la experiencia. Esta página se enfoca en los <strong>cambios concisos y detallados</strong> en mecánicas, habilidades, términos generales y clases específicas, además de ofrecer <strong>guías interactivas para nuevos jugadores</strong> sobre combate y magia. Ahora también incluye <strong>✨ asistentes con IA ✨</strong> para ayudarte a generar ideas para trasfondos y resolver tus dudas sobre las reglas.</p>
+        </section>
+
+        <section id="navegacion-principal" class="card fade-in-section">
+            <h2 class="section-title font-special text-center" style="border-bottom: none;">Explora Contenido</h2>
+            <div class="class-button-container mt-4">
+                <a href="#asistente-reglas-ia" class="class-button">✨ Asistente Reglas IA</a>
+                <a href="#filosofia" class="class-button">Filosofía 2024</a>
+                <a href="#creacion-personajes" class="class-button">Creación Personajes</a>
+                <a href="#reglas-juego" class="class-button">Reglas Generales</a>
+                <a href="#guia-combate-novatos" class="class-button">Guía Combate</a>
+                <a href="#guia-magia-novatos" class="class-button">Guía Magia</a>
+                <a href="#cambios-clase-detallados" class="class-button">Detalles por Clase</a>
+            </div>
+        </section>
+
+        <section id="asistente-reglas-ia" class="card fade-in-section">
+            <h2 class="section-title font-special"><span class="badge badge-ai">✨ Asistente IA</span>: Consulta de Reglas (D&D Revisión 2024)</h2>
+            <p class="mb-4">¿Tienes alguna duda sobre una regla específica de la revisión 2024 de D&D? Escribe tu pregunta a continuación y la IA intentará ayudarte a aclararla.</p>
+            <div class="ai-generator-container" style="border-top: none; padding-top: 0;">
+                <label for="ruleQueryInput" class="block mb-1 font-semibold">Tu Pregunta sobre Reglas:</label>
+                <textarea id="ruleQueryInput" class="ai-generator-textarea" placeholder="Ej: ¿Cómo funciona la nueva regla de Esconderse? o ¿Puedes explicar la acción de Estudiar?"></textarea>
+                <button id="askRuleBtn" class="ai-generator-button">
+                    Preguntar a la IA
+                    <span id="loadingSpinnerRule" class="loading-spinner" style="display: none;"></span>
+                </button>
+                <div id="ruleResultArea" class="ai-result-area" style="display: none;"></div>
+                <p id="ruleError" class="text-red-600 mt-2" style="display: none;"></p>
+            </div>
+        </section>
+
+        <section id="filosofia" class="fade-in-section">
+            <h2 class="section-title font-special">Filosofía General y Presentación (Revisión 2024)</h2>
+            <div class="card">
+                <p>Se busca una mayor claridad en las reglas, una presentación más accesible y un juego que se adapte mejor a diversos estilos de juego.</p>
+                <ul>
+                    <li><span class="badge badge-changed">Compatibilidad Mantenida</span>: Los nuevos manuales son compatibles con las aventuras y suplementos de 5e publicados anteriormente.</li>
+                    <li><span class="badge badge-new">Enfoque en el Personaje</span>: Mayor énfasis en la historia y desarrollo del personaje desde su creación.</li>
+                    <li><span class="badge badge-new">Diseño y Arte Actualizados</span>: Los manuales presentan un nuevo arte, una maquetación mejorada y una organización más lógica de la información, facilitando la consulta.</li>
+                    <li><span class="badge badge-new">Inclusión y Diversidad</span>: Un esfuerzo consciente por reflejar una mayor diversidad e inclusividad en el lenguaje y la representación.</li>
+                    <li><span class="badge badge-changed">Modularidad</span>: Se promueve la adaptación de las reglas a las preferencias de cada mesa, ofreciendo opciones para simplificar o profundizar la experiencia.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="creacion-personajes" class="fade-in-section">
+            <h2 class="section-title font-special">Creación de Personajes: Cambios Fundamentales (Revisión 2024)</h2>
+            <p class="mb-4">La creación de personajes se ha reestructurado para ofrecer más flexibilidad y opciones significativas desde el nivel 1.</p>
+            <div class="card">
+                <h3><span class="badge">Especies (Antes Razas)</span></h3>
+                <ul>
+                    <li><span class="badge badge-changed">Terminología</span>: Se adopta "Especie" en lugar de "Raza".</li>
+                    <li><span class="badge badge-changed">Incrementos de Características</span>: Desvinculados de la especie; ahora provienen del Trasfondo.</li>
+                    <li><span class="badge badge-changed">Actualizaciones de Especies Clave</span>:
+                        <ul>
+                            <li><strong>Dracónidos</strong>: Visión en la oscuridad por defecto. Arma de aliento rediseñada (más usos, acción adicional). Linajes más variados con diferentes tipos de daño y efectos.</li>
+                            <li><strong>Enanos</strong>: Pueden obtener Sentido Tremor (Tremorsense) limitado. Resistencia al veneno y ventaja en salvaciones contra veneno son características estándar. Subespecies (Colina, Montaña) revisadas con habilidades únicas.</li>
+                            <li><strong>Elfos</strong>: Trance modificado (4 horas, beneficios de descanso largo, sin necesidad de dormir). Linaje Feérico otorga trucos adicionales y ventaja en salvaciones contra ser encantado. Subespecies (Alto, Bosque, Drow) con rasgos actualizados.</li>
+                            <li><strong>Humanos</strong>: Versatilidad mantenida. Pueden obtener una dote de origen adicional a nivel 1 o un incremento a tres características.</li>
+                            <li><strong>Tieflings</strong>: Linajes infernales personalizables (elección de conjuros, resistencias y otros rasgos basados en su herencia diabólica o demoníaca).</li>
+                            <li><strong>Orcos</strong>: Especie principal en el Manual del Jugador. Adrenalina (Adrenaline Rush) permite moverse más y obtener PG temporales. Poderío Orcuno (Powerful Build) y Ataques Salvajes (Savage Attacks) revisados.</li>
+                        </ul>
+                    </li>
+                    <li><span class="badge">Ausencias Notables en PHB 2024</span>: Semielfo y Semiorco como especies base (se espera que se integren mediante reglas de linaje mixto o en futuros suplementos).</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3><span class="badge badge-new">Trasfondos (Backgrounds)</span></h3>
+                <ul>
+                    <li><span class="badge badge-new">Fuente de Incrementos de Características</span>: +2 a una característica, +1 a otra; o +1 a tres características diferentes. Esta elección es libre y no está atada al trasfondo.</li>
+                    <li><span class="badge badge-new">Dote de Origen (Nivel 1)</span>: Cada trasfondo prediseñado otorga una dote específica de una nueva categoría llamada "Dotes de Origen". También se pueden crear trasfondos personalizados eligiendo competencias y una dote de origen.</li>
+                    <li><span class="badge badge-changed">Mayor Impacto</span>: Más cruciales para definir mecánica y narrativa (equipo inicial, competencias en habilidades y herramientas, idiomas adicionales y la mencionada dote de origen).</li>
+                    <li><span class="badge badge-new">Personalización</span>: Se anima a los jugadores a personalizar sus trasfondos, eligiendo competencias y dotes que se ajusten a su concepto de personaje.</li>
+                </ul>
+                <div class="ai-generator-container">
+                    <h4 class="font-special text-lg mb-3"><span class="badge badge-ai">✨ Asistente IA</span>: Generador de Ideas para Trasfondos</h4>
+                    <p class="mb-2 text-sm text-gray-700">¿Necesitas inspiración para tu trasfondo? Introduce algunas palabras clave (ej: "noble exiliado", "erudito de lo oculto", "artista callejero con un secreto") y deja que la IA te ayude a generar una base para tu historia.</p>
+                    <label for="backgroundKeywords" class="block mb-1 font-semibold">Palabras Clave:</label>
+                    <textarea id="backgroundKeywords" class="ai-generator-textarea" placeholder="Ej: huérfano, en busca de venganza, hábil con las dagas"></textarea>
+                    <button id="generateBackgroundBtn" class="ai-generator-button">
+                        Generar Ideas de Trasfondo
+                        <span id="loadingSpinnerBg" class="loading-spinner" style="display: none;"></span>
+                    </button>
+                    <div id="backgroundResultArea" class="ai-result-area" style="display: none;"></div>
+                    <p id="backgroundError" class="text-red-600 mt-2" style="display: none;"></p>
+                </div>
+            </div>
+             <div class="card">
+                <h3><span class="badge">Clases y Subclases: Generalidades (Revisión 2024)</span></h3>
+                <p class="mb-2">Todas las clases han sido revisadas para mejorar equilibrio, jugabilidad e identidad. Las subclases generalmente son accesibles en niveles tempranos (a menudo nivel 3, algunas antes). Se busca que cada nivel ofrezca algo significativo.</p>
+                 <ul>
+                    <li><strong>Bárbaro</strong>: Furia mejorada (más fácil de mantener, usos ligados a bonif. de competencia). Sentido del Peligro y Crítico Brutal revisados. Algunas sendas (subclases) reciben mejoras notables, como la Senda del Fanático (Zealot).</li>
+                    <li><strong>Bardo</strong>: Inspiración Bárdica tiene más usos y opciones (ej. añadir a daño, curar). Habilidades no marciales potenciadas. Colegios (subclases) revisados para mayor impacto temático y mecánico. Jack of All Trades y Expertise se mantienen clave.</li>
+                    <li><strong>Clérigo</strong>: Canalizar Divinidad tiene usos ligados al bonificador de competencia. Destruir Muertos Vivientes escala mejor. Dominios Divinos revisados, ofreciendo listas de conjuros de dominio más amplias y características más cohesivas.</li>
+                    <li><strong>Guerrero</strong>: Introduce la nueva mecánica de <span class="badge badge-new">Maestría con Armas</span> (ver sección de reglas). Segundo Aliento (Second Wind) ahora puede usarse como acción adicional y tiene una opción llamada Mente Táctica (Tactical Mind) para ganar ventaja en pruebas de Inteligencia, Sabiduría o Carisma. Estilos de Combate se ofrecen como dotes gratuitas en ciertos niveles. Arquetipos Marciales revisados.</li>
+                    <li><strong>Monje</strong>: Recupera todos los Puntos de Ki en un descanso corto (este es un cambio significativo respecto a algunas propuestas de playtest que los ligaban a descanso largo). Mayor supervivencia con Desviar Ataques (Deflect Attacks, antes Deflect Missiles, ahora más general). Movimiento sin armadura y Artes Marciales siguen siendo fundamentales. Tradiciones Monásticas ajustadas.</li>
+                    <li><strong>Paladín</strong>: Castigo Divino (Divine Smite) ahora puede usarse como una acción de conjuro especial (acción adicional o reacción bajo ciertas circunstancias), con un uso gratuito por descanso largo, además de poder usar espacios de conjuro. Auras mejoradas y Juramentos Sagrados actualizados.</li>
+                    <li><strong>Explorador (Ranger)</strong>: También obtiene <span class="badge badge-new">Maestría con Armas</span>. Ahora es un preparador de conjuros completo de la lista Primordial. Enemigo Predilecto (Favored Enemy) y Explorador de Entornos Naturales (Natural Explorer) son reemplazados por opciones más flexibles y activas como Presa del Cazador (Hunter's Prey). Arquetipos como el Maestro de Bestias (Beast Master) significativamente mejorado con compañeros más robustos y útiles.</li>
+                    <li><strong>Brujo (Warlock)</strong>: Magia de Pacto sigue recuperando espacios de conjuro en un descanso corto (en contraste con algunas propuestas de playtest). Mistic Arcanum (conjuros de alto nivel) se mantienen. Invocaciones Sobrenaturales (Eldritch Invocations) y Dones del Pacto (Pact Boons) revisados y expandidos, con más opciones personalizables.</li>
+                    <li><strong>Mago (Wizard)</strong>: Nuevas características de alto nivel como Modificar Conjuro y Crear Conjuro, permitiendo personalizar o crear efectos mágicos únicos. Recuperación Arcana se mantiene. Escuelas de Magia (subclases) revisadas para ofrecer habilidades más distintivas y equilibradas.</li>
+                </ul>
+            </div>
+             <div class="card">
+                <h3><span class="badge badge-changed">Dotes (Feats)</span></h3>
+                <ul>
+                    <li><span class="badge badge-changed">Parte Central del Juego</span>: Ya no son una regla opcional, están integradas en la progresión de personaje.</li>
+                    <li><span class="badge badge-new">Dotes de Origen</span>: Obtenidas a nivel 1 a través del Trasfondo del personaje, ofreciendo una personalización temprana.</li>
+                    <li><span class="badge badge-changed">Accesibilidad Aumentada</span>: Los personajes obtienen la opción de una dote o una Mejora de Puntuación de Característica (ASI) en los niveles 4, 8, 12, 16 y 19. Algunas clases también pueden otorgar dotes adicionales.</li>
+                    <li><span class="badge badge-changed">Incluyen Incremento de Característica (a menudo)</span>: Muchas dotes ahora incluyen un +1 a una puntuación de característica además de sus otros beneficios, haciéndolas más atractivas en comparación con un ASI puro.</li>
+                    <li><span class="badge badge-changed">Reequilibrio Clave</span>: Dotes problemáticas como <span class="highlight-term">Maestro de Armas Pesadas (Great Weapon Master)</span> y <span class="highlight-term">Tirador de Primera (Sharpshooter)</span> han sido revisadas. La opción de "-5 a la tirada de ataque / +10 al daño" ha sido eliminada o modificada significativamente. Ahora suelen requerir nivel 4 y una puntuación de característica mínima (ej. 13+) y ofrecen otras ventajas o un daño adicional más moderado y consistente.</li>
+                    <li><span class="badge badge-new">Nuevas Categorías de Dotes</span>: Además de las Dotes de Origen, puede haber otras agrupaciones o requisitos.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="reglas-juego" class="fade-in-section">
+            <h2 class="section-title font-special">Reglas del Juego: Mecánicas Actualizadas (Revisión 2024)</h2>
+             <p class="mb-4">Las reglas fundamentales del juego han sido refinadas para mayor claridad y dinamismo, con el objetivo de hacer el juego más intuitivo y emocionante.</p>
+            <div class="card">
+                <h3><span class="badge">Combate: Principales Ajustes (Comparativa)</span></h3>
+                <table class="comparison-table">
+                    <thead>
+                        <tr>
+                            <th>Aspecto Mecánico</th>
+                            <th>Descripción del Cambio en 2024</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge badge-new">Maestría con Armas</span></td>
+                            <td>Nueva mecánica para personajes con enfoque marcial (Guerreros, Bárbaros, Paladines, Exploradores, etc.). Cada arma tiene una o más propiedades de maestría (ej. Hender, Empujar, Derribar, Preparar, Lenta, Vex). Al impactar con un ataque usando un arma, puedes aplicar uno de sus efectos de maestría. Los Guerreros son especialmente versátiles, pudiendo cambiar las maestrías de sus armas durante descansos.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-changed">Acciones en Combate</span></td>
+                            <td>Se clarifican y expanden algunas acciones. La acción "Lanzar un Conjuro" ahora se llama "Magia". La acción de "Ayuda" (Help) es más versátil, pudiendo usarse como acción adicional en algunos casos o para ayudar en pruebas de habilidad de forma más amplia. Se añaden o formalizan acciones como "Estudiar" (para aprender sobre un enemigo) e "Influenciar" (para interacciones sociales en combate o tensas).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-changed">Inspiración Heroica</span></td>
+                            <td>Los jugadores pueden tener múltiples usos de Inspiración (a menudo ligados a su bonif. de competencia o dados por el DM). Se puede usar para repetir cualquier tirada de d20 (ataque, salvación, prueba de habilidad) después de ver el resultado, pero antes de saber si tiene éxito o fracasa. Se puede ganar por un 1 natural en una tirada de d20, por buen roleplaying, o al final de un descanso largo. Se puede pasar Inspiración a otro jugador si ya se tiene.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-changed">Agotamiento (Exhaustion)</span></td>
+                            <td>Sistema simplificado a 10 niveles. Cada nivel impar impone un penalizador acumulativo de -1 a todas las tiradas de d20 (ataques, salvaciones, pruebas). Cada nivel par reduce la velocidad en 10 pies (acumulativo). Al llegar a 10 niveles de agotamiento, el personaje muere. Se recupera un nivel de agotamiento por cada descanso largo completo.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-changed">Sorpresa (Surprise)</span></td>
+                            <td>Las criaturas sorprendidas tienen desventaja en su tirada de Iniciativa y no pueden moverse ni realizar acciones en su primer turno de combate. Pueden tomar reacciones después de que termine su primer turno. Esto reemplaza la pérdida completa del primer turno.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-changed">Derribado (Prone)</span></td>
+                            <td>Levantarse de la condición Derribado ahora cuesta toda la velocidad del personaje para ese turno (antes costaba la mitad de la velocidad). Esto hace que ser derribado sea más penalizante.</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-changed">Agarrar/Empujar (Grapple/Shove)</span></td>
+                            <td>En lugar de una prueba enfrentada, el objetivo de un intento de Agarrar o Empujar ahora realiza una Tirada de Salvación (Fuerza o Destreza, a elección del objetivo) contra la CD de maniobra del atacante. Se puede intentar como parte de la acción de Ataque (reemplazando uno de los ataques si se tienen múltiples).</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge badge-changed">Esconderse (Hide)</span></td>
+                            <td>La CD base para Esconderse es 15 (Destreza/Sigilo). El DM puede ajustar esta CD según las circunstancias (cobertura, iluminación, atención de los observadores). Tener éxito otorga ventaja en la siguiente tirada de ataque desde la ocultación y puede influir en la iniciativa si se esconde antes del combate.</td>
+                        </tr>
+                         <tr>
+                            <td><span class="badge badge-changed">Daño Mágico vs No Mágico (Resistencias)</span></td>
+                            <td>La distinción entre daño contundente/perforante/cortante de fuentes mágicas y no mágicas para superar resistencias comunes ha sido eliminada. Ahora, la resistencia es simplemente a "daño contundente/perforante/cortante". Las armas inherentemente mágicas (+1, etc.) o efectos que específicamente mencionan superar resistencia lo harán.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="card">
+                <h3><span class="badge">Magia y Conjuros: Novedades y Ajustes (Comparativa)</span></h3>
+                <ul>
+                    <li><span class="badge badge-new">Más de 480 Conjuros</span>: La lista de conjuros en el Manual del Jugador Revisado se ha expandido y revisado significativamente. Muchos conjuros clásicos han sido ajustados y se han añadido nuevos.</li>
+                    <li><span class="badge badge-changed">Conjuros Mejorados/Ajustados</span>: Muchos conjuros de curación han sido mejorados (ej. <code>Curar Heridas</code> podría ser 2d8 base, <code>Palabra de Curación</code> 2d4 base). <code>Plegaria de Curación</code> ahora puede otorgar beneficios equivalentes a un Descanso Corto a los afectados. Conjuros de control como <code>Dormir</code> o <code>Telaraña</code> pueden tener ajustes en su escalado o efectividad.</li>
+                    <li><span class="badge badge-changed">Reequilibrio de Conjuros Clave</span>:
+                        <ul>
+                            <li><code>Contraconjuro (Counterspell)</code> y <code>Disipar Magia (Dispel Magic)</code>: Ahora siempre requieren una prueba de característica de lanzamiento de conjuros contra una CD basada en el nivel del conjuro que se intenta contrarrestar/disipar. El lanzamiento automático al usar un espacio de conjuro superior ha sido eliminado o modificado.</li>
+                            <li>Conjuros de invocación (ej. <code>Convocar Animales</code>): Revisados para usar plantillas de estadísticas (stat blocks) genéricas para las criaturas convocadas, en lugar de elegir de listas extensas del Manual de Monstruos. Esto simplifica su uso y equilibra su poder.</li>
+                        </ul>
+                    </li>
+                    <li><span class="badge badge-new">Nuevos Conjuros Ejemplares</span>: Se introducen nuevos conjuros como "Caldero Burbujeante de Tasha" (Tasha's Bubbling Cauldron), "Presencia Regia de Yolande" (Yolande's Regal Presence), y otros que añaden sabor y nuevas opciones tácticas.</li>
+                    <li><span class="badge badge-changed">Lanzamiento Ritual</span>: Todas las clases lanzadoras de conjuros ahora pueden lanzar conjuros como rituales si el conjuro tiene la etiqueta "ritual" y lo tienen preparado (o lo conocen, si no preparan conjuros). Esto tarda 10 minutos adicionales y no gasta un espacio de conjuro.</li>
+                    <li><span class="badge badge-new">Listas de Conjuros de Clase Unificadas</span>: Los conjuros se agrupan en tres listas principales: <span class="highlight-term">Arcana</span> (Bardos, Hechiceros, Brujos, Magos), <span class="highlight-term">Divina</span> (Clérigos, Paladines) y <span class="highlight-term">Primordial</span> (Druidas, Exploradores). Las clases tienen acceso a todos los conjuros de su lista designada, además de conjuros específicos de clase o subclase. Todas las clases lanzadoras de conjuros (excepto algunas configuraciones de Brujo) ahora preparan conjuros.</li>
+                    <li><span class="badge badge-changed">Concentración</span>: Se mantiene la regla de un solo conjuro de concentración activo a la vez. Se clarifica que esto aplica incluso si un conjuro de concentración proviene de un objeto mágico (a menos que el objeto lo especifique de otra manera).</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- GUÍAS CON ACORDEONES -->
+        <section id="guia-combate-novatos" class="fade-in-section">
+            <h2 class="section-title font-special text-center">Guía de Combate para Nuevos Aventureros (Revisión 2024)</h2>
+            <p class="mb-6 text-center text-lg">¡Bienvenido al emocionante mundo del combate en D&D! Aquí aprenderás los fundamentos para sobrevivir y triunfar.</p>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header">El Flujo del Combate <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">El combate en D&D es una secuencia estructurada de turnos y rondas, diseñada para manejar situaciones caóticas de forma ordenada.</p>
+                        <ul>
+                            <li><strong>Iniciativa</strong>: Al comienzo de un encuentro hostil, todos los participantes (jugadores y monstruos/PNJs) tiran un dado de 20 caras (<span class="highlight-term">d20</span>) y suman su <span class="highlight-term">modificador de Destreza</span>. Este resultado es su puntuación de Iniciativa. El Dungeon Master (DM) anota estos resultados y el combate procede en orden descendente de iniciativa. Si hay empates, el DM decide el orden o los participantes empatados tiran de nuevo. ¡Actuar rápido puede ser una ventaja decisiva!</li>
+                            <li><strong>Ronda de Combate</strong>: Una vez que cada criatura en el orden de iniciativa ha tenido su turno, la ronda de combate termina. Inmediatamente comienza una nueva ronda, siguiendo el mismo orden de iniciativa establecido al principio. Una ronda representa aproximadamente <span class="highlight-term">6 segundos</span> en el mundo del juego.</li>
+                            <li><strong>Turnos</strong>: En tu turno, puedes realizar una variedad de acciones, moverte e interactuar con el entorno. Lo que puedes hacer se detalla más adelante.</li>
+                            <li><strong>Sorpresa (Revisión 2024)</strong>: Si un bando logra sorprender al otro (por ejemplo, mediante una emboscada exitosa), las criaturas sorprendidas sufren <span class="highlight-term">desventaja en su tirada de Iniciativa</span>. Además, en su primer turno de combate, una criatura sorprendida <span class="highlight-term">no puede moverse ni realizar acciones</span>. Sin embargo, recuperan la capacidad de usar reacciones después de que termine su primer turno (es decir, una vez que el contador de iniciativa haya pasado su puntuación en la primera ronda).</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">¿Qué Puedes Hacer en Tu Turno? <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">En cada uno de tus turnos, dispones de varios "recursos" de tiempo y capacidad que puedes gastar:</p>
+                        <ul>
+                            <li><strong>Movimiento</strong>: Puedes moverte una distancia hasta tu <span class="highlight-term">Velocidad</span> base (indicada en tu hoja de personaje, típicamente 30 pies para la mayoría de las especies humanoides). Puedes dividir tu movimiento a lo largo de tu turno: moverte un poco, realizar una acción, y luego moverte el resto de tu velocidad si te queda. También puedes optar por no moverte en absoluto.</li>
+                            <li><strong>Acción</strong>: Esta es la actividad principal que realizas en tu turno. Solo puedes realizar <span class="highlight-term">una Acción</span>. Las acciones más comunes incluyen Atacar, Lanzar un Conjuro ("Magia"), Correr, etc. (ver "Acciones Comunes" más abajo).</li>
+                            <li><strong>Acción Adicional (Bonus Action)</strong>: Algunas habilidades de clase, conjuros, dotes u otras características especiales te otorgan la capacidad de realizar una Acción Adicional. Solo puedes realizar <span class="highlight-term">una Acción Adicional</span> por turno, y únicamente si una regla específica te lo permite. No puedes simplemente decidir hacer una segunda acción como acción adicional.</li>
+                            <li><strong>Interacción Gratuita con Objeto</strong>: Puedes interactuar con un objeto de forma sencilla como parte de tu movimiento o acción. Esto incluye cosas como desenvainar o envainar un arma, abrir o cerrar una puerta (que no esté atascada o cerrada con llave), sacar una poción de tu cinturón, o entregar un objeto a otra criatura. El DM tiene la última palabra sobre si una interacción es lo suficientemente simple como para ser gratuita; si es más compleja (como registrar una mochila entera o intentar abrir una cerradura), probablemente requerirá una acción.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Reacciones <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Una Reacción es una respuesta instantánea a un <span class="highlight-term">desencadenante específico</span> que ocurre fuera de tu turno, o a veces en respuesta a algo en tu propio turno. Es una forma de actuar cuando no es tu momento en el orden de iniciativa.</p>
+                        <ul>
+                            <li>Solo puedes tomar <span class="highlight-term">una Reacción por ronda</span> de combate.</li>
+                            <li>Recuperas tu capacidad de usar una Reacción al <span class="highlight-term">inicio de tu siguiente turno</span>.</li>
+                            <li>Debes cumplir con el desencadenante exacto descrito por la regla que te otorga la reacción.</li>
+                            <li>Ejemplos comunes de Reacciones:
+                                <ul>
+                                    <li><strong>Ataque de Oportunidad</strong>: Si una criatura hostil que puedes ver sale de tu alcance de combate cuerpo a cuerpo sin usar la acción de Destrabarse (Disengage), puedes usar tu reacción para hacerle un ataque cuerpo a cuerpo.</li>
+                                    <li>Conjuros como <code>Escudo (Shield)</code>, que se lanzan como reacción cuando eres impactado por un ataque.</li>
+                                    <li>Algunas habilidades de clase o dotes que te permiten reaccionar a eventos específicos.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Acciones Comunes en Combate <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Cuando llega tu turno y decides usar tu Acción, estas son algunas de las opciones más frecuentes:</p>
+                        <ul>
+                            <li><strong>Atacar (Attack)</strong>: Realizas uno o más ataques cuerpo a cuerpo o a distancia con un arma. Si tu clase o características te otorgan múltiples ataques como parte de la acción de Atacar (ej. la característica "Ataque Adicional" del Guerrero), los realizas todos con esta única acción.</li>
+                            <li><strong>Magia (Cast a Spell)</strong>: (Anteriormente "Lanzar un Conjuro"). Si un conjuro tiene un tiempo de lanzamiento de "1 acción", lo lanzas usando tu acción. También debes cumplir con los componentes del conjuro (Verbal, Somático, Material).</li>
+                            <li><strong>Correr (Dash)</strong>: Ganas movimiento adicional para el turno actual igual a tu velocidad, después de aplicar cualquier modificador a tu velocidad. Por ejemplo, si tu velocidad es 30 pies, al usar Correr, puedes moverte un total de 60 pies ese turno.</li>
+                            <li><strong>Destrabarse (Disengage)</strong>: Si usas la acción de Destrabarse, tu movimiento durante el resto del turno no provoca ataques de oportunidad de las criaturas de las que te alejas.</li>
+                            <li><strong>Esquivar (Dodge)</strong>: Hasta el inicio de tu próximo turno, cualquier tirada de ataque contra ti tiene desventaja si puedes ver al atacante, y además haces las tiradas de salvación de Destreza con ventaja. Pierdes este beneficio si quedas incapacitado o si tu velocidad se reduce a 0.</li>
+                            <li><strong>Ayudar (Help)</strong>: Puedes ayudar a otra criatura en una tarea. Si ayudas con una prueba de habilidad, la criatura a la que ayudas obtiene ventaja en la primera prueba de habilidad que haga para la tarea específica en la que la estás ayudando, siempre que la haga antes del inicio de tu próximo turno. Si ayudas en un ataque, eliges a una criatura a 5 pies de ti que esté atacando a un objetivo a 5 pies de ti. El ataque de tu aliado contra ese objetivo tiene ventaja. En la revisión 2024, algunas clases o dotes pueden permitir usar Ayuda como acción adicional.</li>
+                            <li><strong>Esconderse (Hide)</strong>: Haces una prueba de Destreza (Sigilo). La CD base es 15, aunque el DM puede ajustarla según la cobertura, iluminación y la atención de los observadores. Si no te ven ni te oyen, estás oculto. Desde la ocultación, tus ataques tienen ventaja y los ataques contra ti tienen desventaja.</li>
+                            <li><strong>Preparar (Ready)</strong>: Decides posponer tu acción para reaccionar a un desencadenante perceptible. Eliges una acción (ej. Atacar, lanzar un conjuro) y un desencadenante (ej. "cuando el orco cruce la puerta"). Si el desencadenante ocurre antes de tu próximo turno, puedes usar tu reacción para realizar la acción preparada. Si el desencadenante no ocurre, pierdes la acción. Si preparas un conjuro, lo "lanzas" en tu turno pero retienes su energía, que liberas con tu reacción; si mantienes la concentración en el conjuro preparado, esta comienza en tu turno.</li>
+                            <li><strong>Buscar (Search)</strong>: Te dedicas a buscar algo. El DM puede pedirte una prueba de Sabiduría (Percepción) o Inteligencia (Investigación).</li>
+                            <li><strong>Usar un Objeto (Use an Object)</strong>: Interactúas con un objeto más complejo que una interacción gratuita, como beber una poción, aplicar un veneno a un arma, o activar un objeto mágico.</li>
+                            <li><strong>Estudiar (Study - Revisión 2024)</strong>: Usas tu acción para observar y analizar a una criatura que puedas ver. Haces una prueba de Inteligencia (Investigación) o Sabiduría (Perspicacia) contra una CD establecida por el DM (o una CD pasiva del objetivo). Con éxito, aprendes información útil sobre el objetivo, como sus resistencias, vulnerabilidades, inmunidades, o alguna táctica especial.</li>
+                            <li><strong>Influenciar (Influence - Revisión 2024)</strong>: Intentas influenciar a una criatura en una situación social tensa o durante el combate (si es apropiado). Realizas una prueba de Carisma (Engaño, Intimidación o Persuasión) contra la prueba de Sabiduría (Perspicacia) del objetivo o una CD fijada por el DM. El éxito puede hacer que la criatura dude, se rinda (si está muy debilitada), o te dé una apertura, pero raramente cambiará por completo su lealtad o intenciones en medio de un combate.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header">Realizar un Ataque <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Cuando atacas, sigues estos pasos:</p>
+                        <ol class="list-decimal ml-5">
+                            <li class="mb-2"><strong>Elige un Objetivo</strong>: Dentro del alcance de tu arma o conjuro.</li>
+                            <li class="mb-2"><strong>Determina Modificadores</strong>: ¿Tienes ventaja o desventaja? ¿Hay cobertura? ¿Algún conjuro o habilidad afecta tu ataque?</li>
+                            <li class="mb-2"><strong>Haz la Tirada de Ataque</strong>: Tiras un <span class="highlight-term">d20</span> y sumas:
+                                <ul>
+                                    <li>Tu <span class="highlight-term">modificador de característica</span> apropiado (Fuerza para la mayoría de armas cuerpo a cuerpo, Destreza para armas sutiles (finesse) o a distancia).</li>
+                                    <li>Tu <span class="highlight-term">bonificador de competencia</span> (si eres competente con el arma que estás usando).</li>
+                                    <li>Cualquier otro bonificador (ej. de un arma mágica).</li>
+                                </ul>
+                            </li>
+                            <li class="mb-2"><strong>Compara con la Clase de Armadura (CA / AC)</strong>: El resultado de tu tirada de ataque se compara con la Clase de Armadura del objetivo. Si tu resultado es <span class="highlight-term">igual o mayor</span> que la CA del objetivo, ¡impactas!</li>
+                            <li class="mb-2"><strong>Golpe Crítico (Critical Hit)</strong>: Si sacas un <span class="highlight-term">20 natural</span> en el d20 de la tirada de ataque (el dado muestra un 20), es un golpe crítico. Los críticos impactan automáticamente (a menos que la CA del objetivo sea inalcanzable de otra forma, lo cual es raro) y tienen un efecto adicional: duplicas <span class="highlight-term">todos los dados de daño</span> del ataque (no los modificadores fijos). Algunas habilidades o dotes pueden mejorar los críticos.</li>
+                            <li class="mb-2"><strong>Fallo Automático</strong>: Un <span class="highlight-term">1 natural</span> en el d20 de la tirada de ataque siempre falla, independientemente de tus modificadores o la CA del objetivo.</li>
+                            <li class="mb-2"><strong>Ventaja y Desventaja</strong>: Si tienes ventaja en la tirada de ataque, tiras dos d20 y eliges el resultado más alto. Si tienes desventaja, tiras dos d20 y eliges el más bajo. Si tienes ambas, se anulan mutuamente y tiras un solo d20. No se pueden acumular múltiples fuentes de ventaja o desventaja.</li>
+                        </ol>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header">Daño y Puntos de Golpe (PG / HP) <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <ul>
+                            <li><strong>Tirada de Daño</strong>: Si tu ataque impacta, tiras los dados de daño especificados por el arma, conjuro o habilidad. A este resultado, sumas tu <span class="highlight-term">modificador de característica</span> relevante (generalmente el mismo que usaste para la tirada de ataque, aunque algunas armas a dos manos pueden usar Fuerza para el daño incluso si se usa Destreza para atacar con armas sutiles).</li>
+                            <li><strong>Tipos de Daño</strong>: Existen varios tipos de daño (ej. contundente, perforante, cortante, fuego, frío, veneno, ácido, psíquico, necrótico, radiante, trueno, relámpago, fuerza). Es importante saber el tipo de daño, ya que algunas criaturas tienen resistencias o vulnerabilidades.</li>
+                            <li><strong>Resistencia y Vulnerabilidad</strong>: Si una criatura tiene <span class="highlight-term">resistencia</span> a un tipo de daño, recibe la mitad del daño de ese tipo (redondeando hacia abajo). Si tiene <span class="highlight-term">vulnerabilidad</span>, recibe el doble de daño de ese tipo.</li>
+                            <li><strong>Puntos de Golpe (PG / HP)</strong>: Representan la capacidad de una criatura para soportar daño. Cuando una criatura recibe daño, se resta de sus PG actuales.</li>
+                            <li><strong>Caer a 0 PG</strong>: Cuando tus PG se reducen a 0, caes <span class="highlight-term">inconsciente</span> y estás en grave peligro. Al inicio de cada uno de tus turnos mientras estés a 0 PG, debes hacer una <span class="highlight-term">Tirada de Salvación contra Muerte</span> (TSM). Es una tirada de d20 sin modificadores:
+                                <ul>
+                                    <li>Un resultado de 10 o más es un éxito.</li>
+                                    <li>Un resultado de 9 o menos es un fallo.</li>
+                                    <li>Un <span class="highlight-term">20 natural</span> cuenta como 2 éxitos (y recuperas 1 PG, volviendo a la consciencia).</li>
+                                    <li>Un <span class="highlight-term">1 natural</span> cuenta como 2 fallos.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Muerte</strong>: Si acumulas <span class="highlight-term">3 fallos</span> en las TSM, tu personaje muere permanentemente. Si acumulas <span class="highlight-term">3 éxitos</span>, te estabilizas: sigues inconsciente a 0 PG, pero ya no necesitas hacer TSM (a menos que recibas más daño).</li>
+                            <li><strong>Daño a 0 PG</strong>: Si recibes cualquier cantidad de daño mientras estás a 0 PG e inestable, sufres un fallo automático en tus TSM. Si el daño proviene de un golpe crítico, sufres dos fallos. Si el daño te reduce a un negativo igual a tus PG máximos (ej. si tienes 30 PG máximos y recibes daño que te deja a -30 PG o menos de un solo golpe), mueres instantáneamente.</li>
+                            <li><strong>Estabilizar a Otros</strong>: Puedes usar tu acción para hacer una prueba de Sabiduría (Medicina) CD 10 sobre una criatura a 0 PG. Con éxito, se estabiliza. Un kit de sanador te permite estabilizar automáticamente sin prueba.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header">Cobertura <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Los muros, árboles, criaturas y otros obstáculos pueden proporcionar cobertura durante el combate, haciendo que un objetivo sea más difícil de dañar. Hay tres grados de cobertura:</p>
+                        <ul>
+                            <li><strong>Cobertura Media (+2 a la CA y a las Tiradas de Salvación de Destreza)</strong>: Un objetivo tiene cobertura media si al menos la mitad de su cuerpo está oculto por un obstáculo. Ejemplos: detrás de otra criatura, un murete bajo, un tronco de árbol estrecho.</li>
+                            <li><strong>Cobertura Tres Cuartos (+5 a la CA y a las Tiradas de Salvación de Destreza)</strong>: Un objetivo tiene cobertura de tres cuartos si aproximadamente tres cuartas partes de su cuerpo están ocultas. Ejemplos: detrás de una saetera, un pilar grueso, un recodo de un pasillo.</li>
+                            <li><strong>Cobertura Total</strong>: Un objetivo con cobertura total no puede ser blanco directo de un ataque o conjuro, aunque algunos conjuros de área pueden alcanzarlo si su punto de origen está en una línea de efecto hacia él. Ejemplo: completamente detrás de un muro.</li>
+                        </ul>
+                        <p class="mt-2">El DM es quien determina si un objetivo tiene cobertura. Los conjuros y ataques pueden tener reglas específicas sobre cómo interactúan con la cobertura (ej. algunos conjuros ignoran la cobertura media).</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="guia-magia-novatos" class="fade-in-section">
+            <h2 class="section-title font-special text-center">Guía de Magia para Nuevos Lanzadores (Revisión 2024)</h2>
+            <p class="mb-6 text-center text-lg">La magia es una fuerza poderosa y versátil. ¡Aprende a canalizarla!</p>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header">¿Qué es un Conjuro? <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Un conjuro es una manifestación discreta de energía mágica, un efecto único y específico que un personaje puede desatar. Cada conjuro pertenece a un nivel que va desde 0 (conocidos como <span class="highlight-term">trucos</span> o cantrips) hasta el nivel 9, el pináculo del poder mortal.</p>
+                        <ul>
+                            <li><strong>Trucos (Cantrips - Nivel 0)</strong>: Son conjuros sencillos pero versátiles que has dominado hasta tal punto que puedes lanzarlos a voluntad, <span class="highlight-term">sin gastar espacios de conjuro</span> y sin límite de usos diarios. Son la base del arsenal de muchos lanzadores de conjuros, proporcionando ataques fiables o utilidades constantes. Su poder a menudo escala con el nivel general de tu personaje.</li>
+                            <li><strong>Conjuros de Nivel 1 y Superiores</strong>: Estos conjuros son más potentes y requieren gastar un recurso llamado <span class="highlight-term">espacio de conjuro</span>. Para lanzar un conjuro de un nivel particular (ej. nivel 3), debes gastar un espacio de conjuro de ese mismo nivel o superior.
+                                <ul>
+                                    <li><strong>Lanzar a Niveles Superiores</strong>: Algunos conjuros, cuando se lanzan usando un espacio de conjuro de un nivel superior al suyo propio, ganan efectos mejorados (más daño, más objetivos, mayor duración, etc.). Esto se indica en la descripción del conjuro bajo el epígrafe "A Niveles Superiores" (At Higher Levels).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Conocer y Preparar Conjuros</strong>: Dependiendo de tu clase, "conocerás" un número limitado de conjuros o "prepararás" una selección de una lista más amplia cada día. Solo puedes lanzar los conjuros que conoces y/o tienes preparados, y debes tener espacios de conjuro del nivel adecuado disponibles.</li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header">Lanzar un Conjuro: Lo Esencial <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Para lanzar un conjuro, debes ser capaz de cumplir con varios requisitos detallados en su descripción:</p>
+                        <ul>
+                            <li><strong>Componentes</strong>: Son los elementos necesarios para dar forma y liberar la energía mágica.
+                                <ul>
+                                    <li><strong>Verbal (V)</strong>: Requiere entonar palabras de poder. Debes poder hablar en voz alta y clara. Estar amordazado o en un área de silencio mágico te impide cumplir este componente.</li>
+                                    <li><strong>Somático (S)</strong>: Implica realizar gestos arcanos precisos con las manos. Debes tener al menos una mano libre. Si llevas objetos en ambas manos (ej. un arma y un escudo), podrías tener problemas, a menos que una mano pueda interactuar con un foco de conjuros o componente material.</li>
+                                    <li><strong>Material (M)</strong>: Necesitas objetos físicos específicos que se canalizan, consumen o simplemente se usan como parte del lanzamiento.
+                                        <ul>
+                                            <li>Si un componente material indica un <span class="highlight-term">coste en oro</span> (ej. "un diamante por valor de 300 po"), debes tener ese objeto específico, y se consume si la descripción del conjuro así lo indica. Un foco de conjuros no puede reemplazar un componente con coste.</li>
+                                            <li>Si un componente material <span class="highlight-term">no tiene coste</span> y <span class="highlight-term">no se consume</span>, puedes usar un <span class="highlight-term">foco de conjuros</span> (como una varita, un orbe, un símbolo sagrado, un instrumento musical, etc.) en lugar del componente material específico, siempre que seas competente con ese foco y tu clase lo permita. El mismo foco puede usarse para componentes somáticos si el conjuro también los requiere.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Tiempo de Lanzamiento</strong>: Es la cantidad de tiempo que tardas en lanzar el conjuro.
+                                <ul>
+                                    <li><span class="highlight-term">1 Acción</span>: La mayoría de los conjuros de combate se lanzan así.</li>
+                                    <li><span class="highlight-term">1 Acción Adicional (Bonus Action)</span>: Algunos conjuros son rápidos de lanzar. Si lanzas un conjuro como acción adicional, la única otra magia que puedes lanzar ese turno es un truco con un tiempo de lanzamiento de 1 acción. No puedes lanzar dos conjuros de nivel 1 o superior en el mismo turno, incluso si uno es acción y el otro acción adicional (salvo raras excepciones como la "Acción Vertiginosa" (Action Surge) del Guerrero).</li>
+                                    <li><span class="highlight-term">1 Reacción</span>: Se lanzan en respuesta a un desencadenante específico.</li>
+                                    <li>Tiempos más largos (1 minuto, 10 minutos, 1 hora, etc.): Estos conjuros se usan generalmente fuera de combate.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Alcance (Range)</strong>: La distancia máxima a la que puedes proyectar el efecto del conjuro.
+                                <ul>
+                                    <li><strong>Personal (Self)</strong>: El conjuro te afecta solo a ti.</li>
+                                    <li><strong>Toque (Touch)</strong>: Debes tocar a la criatura u objeto objetivo.</li>
+                                    <li>Distancias específicas (ej. 30 pies, 120 pies): El objetivo o punto de origen debe estar dentro de esta distancia.</li>
+                                    <li><strong>A la Vista (Sight)</strong>: Puedes afectar a un objetivo que puedas ver dentro de un alcance muy grande, a menudo limitado por la línea de visión clara.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Objetivos (Targets) y Áreas de Efecto (Areas of Effect)</strong>:
+                                <ul>
+                                    <li>Algunos conjuros requieren que elijas una o más criaturas u objetos específicos como objetivos.</li>
+                                    <li>Otros afectan un área:
+                                        <ul>
+                                            <li><strong>Cono</strong>: Se extiende en una dirección desde ti.</li>
+                                            <li><strong>Cubo</strong>: Un cubo tridimensional.</li>
+                                            <li><strong>Cilindro</strong>: Un cilindro vertical.</li>
+                                            <li><strong>Línea</strong>: Una línea recta desde ti.</li>
+                                            <li><strong>Esfera/Radio</strong>: Se expande desde un punto de origen.</li>
+                                        </ul>
+                                        La descripción del conjuro detalla cómo elegir los objetivos o el punto de origen del área, y si afecta a las criaturas amigas, enemigas o a todas dentro del área.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Duración de los Conjuros <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">La duración de un conjuro indica cuánto tiempo permanece activo su efecto mágico.</p>
+                        <ul>
+                            <li><strong>Instantáneo (Instantaneous)</strong>: El efecto del conjuro ocurre en el momento del lanzamiento y luego desaparece. El daño se inflige, la curación se aplica, etc., pero no hay un efecto mágico persistente.</li>
+                            <li><strong>Tiempo Fijo</strong>: (ej. 1 minuto, 10 minutos, 1 hora, 8 horas, 24 horas, etc.). El conjuro permanece activo durante el tiempo especificado, a menos que sea disipado o termine prematuramente por otras razones (como perder la concentración). 1 minuto equivale a 10 rondas de combate.</li>
+                            <li><strong>Concentración (C)</strong>: Muchos de los conjuros más poderosos o con efectos continuos requieren que mantengas la concentración para que sigan activos.
+                                <ul>
+                                    <li>Solo puedes <span class="highlight-term">concentrarte en un conjuro a la vez</span>. Si lanzas un nuevo conjuro que requiere concentración mientras ya te estás concentrando en otro, el primer conjuro termina inmediatamente.</li>
+                                    <li>La concentración puede romperse si:
+                                        <ul>
+                                            <li>Lanzas otro conjuro que requiere concentración.</li>
+                                            <li><span class="highlight-term">Recibes daño</span>: Cada vez que recibes daño mientras te concentras, debes hacer una <span class="highlight-term">Tirada de Salvación de Constitución</span>. La CD para esta salvación es <span class="highlight-term">10 o la mitad del daño recibido</span>, la que sea mayor. Si fallas la salvación, pierdes la concentración y el conjuro termina. Si recibes daño de múltiples fuentes (ej. varios ataques), haces una salvación por cada fuente de daño.</li>
+                                            <li>Quedas <span class="highlight-term">incapacitado</span> o <span class="highlight-term">mueres</span>.</li>
+                                            <li>El DM puede determinar que un evento ambiental extremo (ej. ser golpeado por una ola gigante, un terremoto) también requiera una tirada de salvación de Constitución para mantener la concentración.</li>
+                                        </ul>
+                                    </li>
+                                    <li>Algunas actividades normales como moverse o atacar no rompen la concentración.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Hasta ser Disipado o Activado (Until Dispelled or Triggered)</strong>: Algunos conjuros, como <code>Alarma (Alarm)</code> o <code>Glifo custodio (Glyph of Warding)</code>, permanecen activos indefinidamente hasta que son disipados por un efecto como <code>Disipar Magia</code>, o hasta que se cumple la condición que los activa.</li>
+                            <li><strong>Especial</strong>: Algunos conjuros tienen duraciones únicas descritas en su texto.</li>
+                        </ul>
+                        <p class="mt-2">Puedes terminar la concentración en un conjuro en cualquier momento (no requiere acción).</p>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Tiradas de Salvación y Ataques de Conjuro <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Muchos conjuros no impactan automáticamente. El objetivo puede tener la oportunidad de resistir, o tú puedes necesitar acertar con un ataque mágico.</p>
+                        <ul>
+                            <li><strong>Tiradas de Salvación (Saving Throws)</strong>: Muchos conjuros permiten que el objetivo realice una tirada de salvación para evitar por completo sus efectos o para reducirlos. La descripción del conjuro especifica qué característica se usa para la salvación (ej. Destreza, Sabiduría, Constitución) y qué sucede si se tiene éxito o se falla.
+                                <ul>
+                                    <li>La <span class="highlight-term">Clase de Dificultad (CD)</span> para la tirada de salvación de tus conjuros se calcula así: <br><span class="highlight-term">CD de Salvación de Conjuros = 8 + tu Bonificador de Competencia + tu Modificador de Característica de Lanzamiento de Conjuros</span>.</li>
+                                    <li>Tu característica de lanzamiento de conjuros depende de tu clase: Inteligencia para Magos; Sabiduría para Clérigos, Druidas y Exploradores; Carisma para Bardos, Hechiceros, Paladines y Brujos.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Tiradas de Ataque de Conjuro (Spell Attack Rolls)</strong>: Algunos conjuros requieren que hagas una tirada de ataque para ver si impactas al objetivo, similar a un ataque con arma.
+                                <ul>
+                                    <li>Tu <span class="highlight-term">bonificador de ataque de conjuro</span> se calcula así: <br><span class="highlight-term">Bonificador de Ataque de Conjuro = tu Bonificador de Competencia + tu Modificador de Característica de Lanzamiento de Conjuros</span>.</li>
+                                    <li>Para hacer un ataque de conjuro, tiras un d20 y sumas este bonificador. Comparas el total con la Clase de Armadura (CA) del objetivo.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                 <div class="accordion-item">
+                    <button class="accordion-header">Listas de Conjuros y Preparación (Revisión 2024) <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">En la revisión de 2024, la organización y acceso a los conjuros se ha reestructurado. La magia se agrupa en tres listas principales, y la mayoría de las clases ahora preparan sus conjuros diariamente:</p>
+                        <ul>
+                            <li><strong>Listas de Conjuros Principales</strong>:
+                                <ul>
+                                    <li><span class="highlight-term">Arcana</span>: Usada principalmente por Bardos, Hechiceros, Brujos y Magos. Contiene una amplia gama de conjuros, incluyendo manipulación de energía, ilusiones, encantamientos, transmutaciones, nigromancia y adivinación.</li>
+                                    <li><span class="highlight-term">Divina</span>: Usada principalmente por Clérigos y Paladines. Incluye conjuros de curación, protección, restauración, infligir daño sagrado o necrótico (según la deidad), y comunicarse con entidades divinas.</li>
+                                    <li><span class="highlight-term">Primordial</span>: Usada principalmente por Druidas y Exploradores. Se enfoca en la magia de la naturaleza, los elementos, la transformación en bestias, la comunicación con animales y plantas, y la curación a través de medios naturales.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Preparación de Conjuros</strong>:
+                                <ul>
+                                    <li>La mayoría de las clases lanzadoras de conjuros (Bardos, Clérigos, Druidas, Magos, Paladines, Exploradores y muchos Hechiceros) ahora <span class="highlight-term">preparan sus conjuros</span>.</li>
+                                    <li>Cada día, después de completar un <span class="highlight-term">descanso largo</span>, eliges un número de conjuros de la lista de conjuros de tu clase (Arcana, Divina o Primordial, según corresponda) para tener preparados. El número de conjuros que puedes preparar suele ser igual a tu <span class="highlight-term">nivel en esa clase + tu modificador de característica de lanzamiento de conjuros</span> (mínimo de un conjuro).</li>
+                                    <li>Los conjuros que prepares deben ser de un nivel para el que tengas espacios de conjuro.</li>
+                                    <li>Solo puedes lanzar los conjuros que tienes preparados en ese momento. Puedes cambiar tu lista de conjuros preparados cada vez que termines un descanso largo.</li>
+                                    <li>Los <span class="highlight-term">trucos</span> no necesitan ser preparados; si los conoces, puedes lanzarlos.</li>
+                                    <li>Algunas clases o subclases pueden tener reglas ligeramente diferentes o conjuros adicionales que siempre están preparados (ej. conjuros de dominio para Clérigos, conjuros de círculo para Druidas, conjuros de origen para Hechiceros).</li>
+                                </ul>
+                            </li>
+                            <li><strong>Brujos (Warlocks) y Conjuros Conocidos</strong>: Los Brujos siguen un modelo ligeramente diferente, donde "conocen" un número limitado de conjuros y no los preparan diariamente de una lista más grande. Sin embargo, la forma en que aprenden y cambian estos conjuros conocidos puede haber sido ajustada.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Lanzamiento Ritual (Revisión 2024) <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Ciertos conjuros tienen la etiqueta "<span class="highlight-term">Ritual</span>". Estos conjuros pueden ser lanzados de una forma especial que no consume un espacio de conjuro, lo cual es ideal para utilidades fuera de combate.</p>
+                        <ul>
+                            <li>Para lanzar un conjuro como un ritual, tu personaje debe tener la característica de <span class="highlight-term">Lanzamiento Ritual</span> (la mayoría de las clases lanzadoras de conjuros ahora la tienen de forma innata o pueden acceder a ella fácilmente).</li>
+                            <li>El conjuro debe tener la etiqueta "Ritual" en su descripción.</li>
+                            <li>Debes tener el conjuro <span class="highlight-term">preparado</span> (o conocerlo, si tu clase no prepara conjuros de la lista completa, como los Brujos con el Pacto del Tomo).</li>
+                            <li>Lanzar un conjuro como ritual <span class="highlight-term">tarda 10 minutos más</span> que su tiempo de lanzamiento normal. Por ejemplo, un conjuro que normalmente toma 1 acción, como ritual tardaría 10 minutos y 1 acción (o aproximadamente 10 minutos y 6 segundos).</li>
+                            <li>Lo más importante: lanzar un conjuro como ritual <span class="highlight-term">no gasta un espacio de conjuro</span>.</li>
+                            <li>No puedes lanzar un conjuro como ritual si su tiempo de lanzamiento normal es una acción adicional o una reacción.</li>
+                            <li>Ejemplos comunes de conjuros rituales incluyen <code>Detectar Magia</code>, <code>Identificar</code>, <code>Comprender Idiomas</code>, <code>Alarma</code>.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <button class="accordion-header">Combinar Efectos Mágicos <svg data-lucide="chevron-down" class="lucide lucide-chevron-down" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></button>
+                    <div class="accordion-content">
+                        <p class="mb-2">Las reglas sobre cómo interactúan múltiples efectos mágicos son importantes para evitar abusos y mantener el equilibrio del juego.</p>
+                        <ul>
+                            <li>Los efectos de <span class="highlight-term">diferentes conjuros se suman</span> (se acumulan), siempre que sus duraciones se solapen. Por ejemplo, si estás bajo los efectos de <code>Bendición (Bless)</code> y <code>Escudo de Fe (Shield of Faith)</code>, te beneficias de ambos.</li>
+                            <li>Sin embargo, los efectos del <span class="highlight-term">mismo conjuro</span> lanzado varias veces sobre el mismo objetivo o área generalmente <span class="highlight-term">no se acumulan</span>. En su lugar, solo se aplica el efecto más potente (el que tenga la tirada de dado más alta, el bonificador más grande, la CD más alta, etc.), o el más reciente si son idénticos en potencia.
+                                <ul>
+                                    <li>Por ejemplo, si dos Clérigos lanzan <code>Bendición</code> sobre ti, no obtienes un +2d4 a tus tiradas; solo se aplica el +1d4 de una de las bendiciones.</li>
+                                    <li>De manera similar, si un Mago te lanza <code>Acelerar (Haste)</code> y luego otro Mago también te lanza <code>Acelerar</code>, no obtienes el doble de beneficios; solo el efecto de un conjuro <code>Acelerar</code> está activo.</li>
+                                </ul>
+                            </li>
+                            <li>Esta regla también se aplica a los efectos de características de clase, objetos mágicos, etc., si provienen de la "misma fuente" o tienen el "mismo nombre". El DM tiene la última palabra en casos ambiguos.</li>
+                            <li>La excepción son los conjuros que infligen daño instantáneo. Si te golpean dos <code>Bolas de Fuego</code>, recibes el daño de ambas. La no acumulación se refiere principalmente a efectos continuos, bonificadores y penalizadores.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECCIONES DETALLADAS POR CLASE CON PESTAÑAS Y FILTRO -->
+        <section id="cambios-clase-detallados" class="fade-in-section">
+            <h2 class="section-title font-special text-center">Análisis Detallado por Clase (Revisión 2024)</h2>
+            <input type="text" id="classFilterInput" class="mx-auto block" placeholder="Buscar clase por nombre...">
+            
+            <div class="tabs-container">
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="picaro" data-classname="pícaro rogue">Pícaro</button>
+                    <button class="tab-button" data-tab="hechicero" data-classname="hechicero sorcerer">Hechicero</button>
+                    <button class="tab-button" data-tab="druida" data-classname="druida druid">Druida</button>
+                    <!-- Añadir más botones para otras clases aquí -->
+                     <button class="tab-button" data-tab="guerrero" data-classname="guerrero fighter">Guerrero (Ejemplo)</button>
+                </div>
+
+                <div id="tab-picaro" class="tab-content active card">
+                    <h3 class="font-special"><span class="badge">Pícaro (Rogue)</span> - El Maestro de las Sombras Refinado</h3>
+                    <p class="mb-4">El Pícaro en la revisión de 2024 se centra en potenciar su versatilidad táctica y la toma de decisiones significativas en combate, manteniendo su esencia como experto en habilidades y oportunista.</p>
+                    
+                    <h4><span class="badge badge-changed">Ataque Furtivo (Sneak Attack)</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Mecánica Base</strong>: Sigue siendo la fuente principal de daño del Pícaro. Una vez por turno, puedes infligir daño adicional a una criatura que golpees con un ataque si tienes ventaja en la tirada de ataque o si otro enemigo del objetivo está a 5 pies de él, ese enemigo no está incapacitado, y no tienes desventaja en la tirada de ataque. El arma debe ser sutil (finesse) o a distancia. La cantidad de dados de daño por nivel (1d6 a nivel 1, aumentando a 10d6 a nivel 19) no cambia fundamentalmente.</li>
+                        <li><strong>Flexibilidad</strong>: La interacción con la nueva regla de Esconderse (CD 15 base) puede facilitar su activación al permitir obtener ventaja más consistentemente. Las opciones de la acción Ayudar también pueden ser relevantes.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-new">Golpe Perspicaz (Cunning Strike) - Novedad Central</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Introducción</strong>: A partir del nivel 5 (esta es una característica clave de la revisión, los detalles exactos pueden variar ligeramente de los playtests a la versión final), los Pícaros ganan la opción de "Golpe Perspicaz".</li>
+                        <li><strong>Funcionamiento</strong>: Al impactar con un ataque que te permitiría aplicar el daño de tu Ataque Furtivo, puedes elegir <span class="highlight-term">renunciar a uno o más dados de tu Ataque Furtivo</span> para aplicar un efecto adicional debilitante o de control al objetivo, además del daño restante del Ataque Furtivo (si lo hay) y el daño del arma.</li>
+                        <li><strong>Opciones de Golpe Perspicaz (Ejemplos basados en Playtests, sujetos a la versión final)</strong>:
+                            <ul class="mt-2">
+                                <li><strong>Desarmar</strong>: Gastas 1 dado de Ataque Furtivo. El objetivo debe superar una Tirada de Salvación de Destreza o Fuerza (a tu elección, contra tu CD de Maniobras de Pícaro) o soltar un objeto que sostenga de tu elección, que cae a sus pies.</li>
+                                <li><strong>Envenenar</strong>: Gastas 2 dados de Ataque Furtivo. El objetivo sufre la condición Envenenado durante 1 minuto. Puede realizar una Tirada de Salvación de Constitución al final de cada uno de sus turnos para terminar el efecto antes.</li>
+                                <li><strong>Derribar</strong>: Gastas 1 dado de Ataque Furtivo. El objetivo debe superar una Tirada de Salvación de Destreza o Fuerza o ser Derribado (Prone).</li>
+                                <li><strong>Reducir Velocidad</strong>: Gastas 1 dado de Ataque Furtivo. La velocidad del objetivo se reduce a la mitad hasta el inicio del próximo turno del Pícaro.</li>
+                                <li><strong>Empujar/Atraer</strong>: Gastas 1 dado de Ataque Furtivo. Puedes empujar o atraer al objetivo 10 pies en línea recta.</li>
+                                <li><strong>Ofuscar (Obscure)</strong>: Gastas 1 dado de Ataque Furtivo. Creas un área de oscuridad ligera o niebla ligera alrededor del objetivo, potencialmente dándole desventaja o permitiéndote esconderte.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Impacto</strong>: Añade una capa táctica muy significativa al Pícaro, permitiéndole no solo ser un causante de daño, sino también un controlador y debilitador del campo de batalla. La elección entre máximo daño o aplicar un efecto se vuelve crucial en cada turno. La CD para estos efectos suele ser 8 + tu bonificador de competencia + tu modificador de Destreza.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-changed">Acción Astuta (Cunning Action)</span></h4>
+                    <ul class="mb-3">
+                        <li>Las opciones clásicas se mantienen: puedes usar tu acción adicional para realizar las acciones de <span class="highlight-term">Correr (Dash)</span>, <span class="highlight-term">Destrabarse (Disengage)</span> o <span class="highlight-term">Esconderse (Hide)</span>.</li>
+                        <li>La nueva regla de Esconderse (CD 15 base) interactúa directamente aquí, haciendo más predecible el intento de ocultarse y, por ende, la activación del Ataque Furtivo.</li>
+                        <li>Algunas subclases pueden añadir más opciones a Acción Astuta.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-changed">Habilidades y Pericias (Expertise)</span></h4>
+                    <ul class="mb-3">
+                        <li>Sigue siendo un maestro de las habilidades. A nivel 1 y 6, eliges dos de tus competencias en habilidades (o una habilidad y herramientas de ladrón) y tu bonificador de competencia se duplica para cualquier prueba de característica que hagas usando cualquiera de las competencias elegidas.</li>
+                        <li>La nueva regla de Ayuda (Help) puede ser más útil para Pícaros con muchas competencias, permitiéndoles contribuir de forma más efectiva fuera de su propio turno o en situaciones no combativas.</li>
+                    </ul>
+                    
+                    <h4><span class="badge badge-changed">Subclases (Arquetipos Ladronescos)</span></h4>
+                    <p class="mb-2">Todas las subclases existentes serán revisadas para alinearse con los nuevos principios de diseño y las mecánicas actualizadas como Golpe Perspicaz. Se espera que cada una ofrezca un estilo de juego distintivo.</p>
+                    <ul class="mb-3">
+                        <li><strong>Asesino (Assassin)</strong>: Se espera una revisión para que su característica "Asesinar" sea más consistente y útil, especialmente en combates que no comienzan con una ronda de sorpresa. Podría enfocarse más en explotar vulnerabilidades o infligir condiciones.</li>
+                        <li><strong>Ladrón (Thief)</strong>: Su característica "Manos Rápidas" (Fast Hands) podría ver mejoras para interactuar con más tipos de objetos o realizar acciones adicionales más variadas y significativas, como Usar un Objeto que normalmente requeriría una acción. "Uso de Objetos Mágicos" (Use Magic Device) a alto nivel podría ser revisado.</li>
+                        <li><strong>Embaucador Arcano (Arcane Trickster)</strong>: Ajustes en su progresión de conjuros y cómo su magia (principalmente Ilusión y Encantamiento) interactúa con sus habilidades de Pícaro, como "Mano de Mago Ligeira" (Mage Hand Legerdemain). Podría tener acceso a una lista de conjuros ligeramente expandida o formas únicas de usar sus conjuros.</li>
+                        <li><strong>Otras Subclases (Mastermind, Inquisitive, Phantom, Soulknife)</strong>: Se espera que se actualicen desde suplementos anteriores, integrando las nuevas mecánicas y asegurando su viabilidad y atractivo temático.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-changed">Otras Características Notables</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Evasión (Evasion)</strong>: A nivel 7, cuando estés sujeto a un efecto que te permita hacer una tirada de salvación de Destreza para recibir solo la mitad de daño, en lugar de eso no recibes daño si tienes éxito en la salvación, y solo la mitad de daño si fallas. Se espera que se mantenga.</li>
+                        <li><strong>Esquiva Asombrosa (Uncanny Dodge)</strong>: A nivel 5, cuando un atacante que puedas ver te impacta con un ataque, puedes usar tu reacción para reducir a la mitad el daño del ataque contra ti. Probablemente se mantenga.</li>
+                        <li><strong>Sentido Ciego (Blindsense)</strong>: A nivel 14, si puedes oír, eres consciente de la ubicación de cualquier criatura escondida o invisible a 10 pies de ti. Podría ver ajustes en su rango o condiciones.</li>
+                        <li><strong>Talento Fiable (Reliable Talent)</strong>: A nivel 11, cada vez que hagas una prueba de habilidad en la que apliques tu bonificador de competencia, puedes tratar una tirada de d20 de 9 o menos como un 10. Sigue siendo una característica de alto nivel muy potente.</li>
+                        <li><strong>Elusive (Esquivo)</strong>: A nivel 18, ningún ataque tiene ventaja contra ti mientras no estés incapacitado.</li>
+                        <li><strong>Stroke of Luck (Golpe de Suerte)</strong>: A nivel 20, si tu ataque falla un objetivo dentro del alcance, puedes convertir el fallo en un impacto. Alternativamente, si fallas una prueba de característica, puedes tratar la tirada de d20 como un 20. Una vez usado, debes terminar un descanso corto o largo para usarlo de nuevo.</li>
+                    </ul>
+                    <p class="mt-3"><strong>Sensación General del Nuevo Pícaro</strong>: Más opciones tácticas y de control en combate gracias a Golpe Perspicaz, manteniendo su rol de especialista en habilidades y daño concentrado. La predictibilidad de Esconderse y la mejora general de las acciones lo hacen un personaje aún más versátil y divertido de jugar.</p>
+                </div>
+
+                <div id="tab-hechicero" class="tab-content card">
+                    <h3 class="font-special"><span class="badge">Hechicero (Sorcerer)</span> - El Poder Innato Desatado</h3>
+                    <p class="mb-4">La revisión de 2024 busca dar al Hechicero más flexibilidad, más opciones de conjuros conocidos y una Metamagia más impactante y accesible, abordando algunas de las limitaciones percibidas en la versión de 2014 y consolidando su identidad como un canalizador de magia pura y adaptable.</p>
+
+                    <h4><span class="badge badge-changed">Conocimiento de Conjuros y Preparación</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Modelo de Preparación</strong>: A diferencia de la 5e de 2014 donde los Hechiceros tenían un número fijo de conjuros conocidos, en la revisión de 2024, los Hechiceros se convierten en <span class="highlight-term">preparadores de conjuros</span>, similar a los Clérigos o Druidas.</li>
+                        <li><strong>Acceso a la Lista Arcana</strong>: Preparan sus conjuros de la lista de conjuros <span class="highlight-term">Arcana</span>.</li>
+                        <li><strong>Número de Conjuros Preparados</strong>: Cada día, después de un descanso largo, pueden preparar un número de conjuros igual a su <span class="highlight-term">nivel de Hechicero + su modificador de Carisma</span> (mínimo de un conjuro).</li>
+                        <li><strong>Conjuros de Origen (Origin Spells)</strong>: Cada Origen de Hechicería ahora otorga una lista de conjuros temáticos que <span class="highlight-term">siempre están preparados</span> y <span class="highlight-term">no cuentan contra el número de conjuros que puedes preparar cada día</span>. Estos conjuros de origen suelen ser más numerosos y significativos que antes, y a menudo pueden ser cambiados al subir de nivel por otros de ciertas escuelas de magia de la lista Arcana (o a veces Primordial/Divina si el origen lo justifica). Esto aumenta drásticamente la cantidad de conjuros a los que un Hechicero tiene acceso efectivo.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-changed">Puntos de Hechicería y Metamagia</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Puntos de Hechicería (Sorcery Points)</strong>: La cantidad de puntos por nivel (igual a tu nivel de Hechicero) se mantiene, pero su uso se vuelve aún más crucial con las nuevas y revisadas opciones de Metamagia. Se recuperan todos al finalizar un descanso largo.</li>
+                        <li><strong>Nuevas y Revisadas Opciones de Metamagia</strong>: Se añaden nuevas Metamagias y se revisan las existentes para mayor impacto y utilidad. Ejemplos de playtests (pueden variar en la versión final):
+                            <ul class="mt-2">
+                                <li><strong>Conjuro Cuidadoso (Careful Spell)</strong>: Permite proteger a más criaturas o de forma más efectiva.</li>
+                                <li><strong>Conjuro Distante (Distant Spell)</strong>: Podría tener un coste reducido o un aumento de alcance mayor.</li>
+                                <li><strong>Conjuro Extendido (Extended Spell)</strong>: Similar, podría ser más eficiente.</li>
+                                <li><strong>Conjuro Potenciado (Empowered Spell)</strong>: Podría permitir repetir más dados de daño o tener un coste menor.</li>
+                                <li><strong>Conjuro Sutil (Subtle Spell)</strong>: Sigue siendo clave para lanzar conjuros sin componentes verbales o somáticos.</li>
+                                <li><strong>Conjuro Gemelo (Twinned Spell)</strong>: Ha sido una de las Metamagias más revisadas en playtests. Es probable que su coste se ajuste según el nivel del conjuro, o que tenga limitaciones sobre qué conjuros puede afectar para evitar desequilibrios (ej. no poder gemelar conjuros de concentración de alto nivel o conjuros que ya pueden afectar a múltiples objetivos).</li>
+                                <li><span class="badge badge-new">Nuevas Opciones</span>: Podrían incluir metamagias para cambiar el tipo de daño de un conjuro, para superar resistencias, o para aplicar efectos de control adicionales.</li>
+                            </ul>
+                        </li>
+                         <li><strong>Acceso a Metamagia</strong>: Se obtienen opciones de Metamagia en los niveles habituales (3, 10, 17), pero la mayor cantidad de conjuros preparados y de origen permite más sinergias y un uso más estratégico de la Metamagia.</li>
+                         <li><strong>Creación Flexible de Conjuros (Flexible Casting)</strong>: La capacidad de convertir Puntos de Hechicería en espacios de conjuro (y viceversa) como acción adicional se mantiene, siendo una herramienta clave de gestión de recursos y versatilidad. Las tasas de conversión podrían ser ajustadas.</li>
+                    </ul>
+                    
+                    <h4><span class="badge badge-changed">Orígenes de Hechicería (Sorcerous Origins)</span></h4>
+                    <p class="mb-2">Todos los orígenes serán revisados. El foco está en darles una identidad más fuerte, características más consistentes y útiles a lo largo de todos los niveles, y listas de conjuros de origen temáticas y robustas.</p>
+                    <ul class="mb-3">
+                        <li><strong>Magia Salvaje (Wild Magic)</strong>:
+                            <ul class="mt-2">
+                                <li><span class="highlight-term">Oleada de Magia Salvaje (Wild Magic Surge)</span>: Se busca que se active de forma más controlada o frecuente por el jugador (quizás gastando Puntos de Hechicería o después de usar Metamagia). La tabla de Magia Salvaje será revisada con nuevos efectos, buscando un balance entre lo caótico, lo beneficioso y lo perjudicial.</li>
+                                <li><span class="highlight-term">Controlar la Suerte (Bend Luck / Tides of Chaos)</span>: Características que permiten manipular tiradas de dado, probablemente revisadas para mayor consistencia.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Linaje Dracónico (Draconic Bloodline)</strong>:
+                            <ul class="mt-2">
+                                <li><span class="highlight-term">Resistencia Elemental</span> y <span class="highlight-term">Escamas Dracónicas (CA)</span>: Se mantienen como pilares de su identidad defensiva.</li>
+                                <li><span class="highlight-term">Afinidad Elemental</span>: El daño adicional a conjuros del tipo elemental asociado a su linaje podría aplicarse de forma más amplia o tener un efecto más potente.</li>
+                                <li><span class="highlight-term">Alas Dracónicas</span> y <span class="highlight-term">Presencia Dracónica</span>: Características de niveles superiores que probablemente serán mantenidas o mejoradas. Su lista de conjuros de origen reflejará el poder elemental y la majestuosidad dracónica.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Otros Orígenes (ej. Mente Aberrante, Alma Mecánica, Mago del Reloj, Hechicero Divino de suplementos anteriores)</strong>: Se integrarán los aprendizajes de estos suplementos. Sus listas de conjuros de origen y características serán estandarizadas y actualizadas al nuevo formato. Por ejemplo, el Hechicero Divino (Divine Soul) podría tener una forma más estructurada de acceder a la lista de conjuros Divina.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-new">Magia Innata y Características de Clase</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Restauración Arcana (Sorcerous Restoration)</strong>: A nivel 20 (o quizás una versión más temprana), los Hechiceros podrían recuperar Puntos de Hechicería al realizar un descanso corto, dándoles más aguante.</li>
+                        <li><strong>Crear Conjuro / Modificar Conjuro (Nivel Alto)</strong>: Podrían ganar una característica de alto nivel que les permita manifestar un conjuro de forma única o modificar permanentemente algunos de sus conjuros conocidos (si se mantiene algún aspecto de "conjuros conocidos" además de los preparados), representando su dominio innato y personal sobre la magia.</li>
+                    </ul>
+                    <p class="mt-3"><strong>Sensación General del Nuevo Hechicero</strong>: Mucho más versátil y con menos "ansiedad por elección de conjuros" gracias al sistema de preparación y las robustas listas de conjuros de origen. La Metamagia sigue siendo su pilar, pero con un abanico de opciones potencialmente más amplio, útil y equilibrado, permitiendo una personalización profunda de su estilo de lanzamiento de conjuros.</p>
+                </div>
+
+                <div id="tab-druida" class="tab-content card">
+                    <h3 class="font-special"><span class="badge">Druida (Druid)</span> - El Poder Primordial Reconfigurado</h3>
+                    <p class="mb-4">Los Druidas en la revisión de 2024 ven cambios significativos en su característica icónica, Forma Salvaje, y una mayor conexión con la nueva lista de conjuros Primordial, buscando un equilibrio entre sus roles de lanzador de conjuros, transformista, apoyo y controlador del entorno.</p>
+
+                    <h4><span class="badge badge-changed">Forma Salvaje (Wild Shape)</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Plantillas de Estadísticas (Stat Blocks) Genéricas</strong>: Este es el cambio más grande y fundamental. En lugar de que los jugadores busquen estadísticas de bestias individuales en el Manual de Monstruos (lo que generaba problemas de equilibrio y complejidad), los Druidas ahora usan <span class="highlight-term">plantillas genéricas</span> para sus formas animales. Habrá plantillas como "Bestia de la Tierra", "Bestia del Aire" (o "del Vuelo"), "Bestia del Agua" (o "Acuática"), y quizás "Bestia Arbórea" o "Insectoide" a niveles más altos o para ciertos círculos.</li>
+                        <li><strong>Escalado de Plantillas</strong>: Estas plantillas <span class="highlight-term">escalan con el nivel del Druida</span>. Sus Puntos de Golpe, bonificador de ataque, daño de sus ataques naturales, y la CD de salvación de cualquier habilidad especial de la plantilla mejorarán a medida que el Druida sube de nivel. Esto asegura que la Forma Salvaje siga siendo relevante en todos los niveles de juego.</li>
+                        <li><strong>Personalización Limitada dentro de la Plantilla</strong>: Al transformarse, el Druida podría elegir entre un pequeño conjunto de rasgos o ataques ofrecidos por la plantilla (ej. una Bestia de la Tierra podría elegir entre un ataque de mordisco, garras, o quizás una embestida).</li>
+                        <li><strong>Tipos de Criatura y Restricciones</strong>: Inicialmente, las plantillas se centran en formas de bestia (Beast). A niveles más altos, o a través de características de subclase (especialmente el Círculo de la Luna), los Druidas podrían ganar acceso a plantillas para elementales, plantas monstruosas o criaturas feéricas. Las restricciones de Valor de Desafío (CR) y capacidad de movimiento (vuelo, natación) se integran en cuándo se accede a ciertas plantillas o mejoras de plantilla.</li>
+                        <li><strong>Usos de Forma Salvaje</strong>: La cantidad de usos podría estar ligada al <span class="highlight-term">Bonificador de Competencia</span> por descanso largo (ej. 2 usos a nivel bajo, aumentando a 6 a nivel alto), o mantenerse como 2 usos que se recuperan en un descanso corto o largo, dependiendo de la retroalimentación de los playtests.</li>
+                        <li><strong>Duración</strong>: La duración de la Forma Salvaje probablemente será de varias horas (ej. igual a la mitad de tu nivel de Druida en horas, o un número fijo de horas), permitiendo su uso prolongado para exploración o infiltración.</li>
+                        <li><strong>Lanzamiento de Conjuros en Forma Salvaje</strong>: Generalmente <span class="highlight-term">no permitido</span> para la mayoría de los Druidas, a menos que una característica de subclase (como las del Círculo de la Luna a niveles más altos) lo permita explícitamente. Mantener la concentración en conjuros lanzados antes de transformarse sigue siendo posible.</li>
+                        <li><strong>Conservar Rasgos Mentales</strong>: El Druida conserva sus puntuaciones de Inteligencia, Sabiduría y Carisma, así como sus competencias en habilidades y salvaciones mentales. Las estadísticas físicas (Fuerza, Destreza, Constitución), PG, CA y sentidos se reemplazan por los de la plantilla.</li>
+                    </ul>
+                    
+                    <h4><span class="badge badge-changed">Conjuración Druídica</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Preparador de Conjuros</strong>: Siguen siendo preparadores de conjuros, eligiendo de la lista de conjuros del Druida cada día después de un descanso largo.</li>
+                        <li><strong>Lista de Conjuros Primordial</strong>: Acceden principalmente a la nueva lista de conjuros <span class="highlight-term">Primordial</span>, que contiene conjuros de manipulación de la naturaleza, los elementos, curación natural, transformación, y comunicación con animales y plantas. También pueden tener acceso a algunos conjuros de la lista Divina o Arcana a través de características de Círculo o dotes.</li>
+                        <li><strong>Lanzamiento Ritual</strong>: Como todos los lanzadores en la revisión 2024, pueden lanzar conjuros rituales que tengan preparados y que posean la etiqueta "ritual", sin gastar un espacio de conjuro.</li>
+                        <li><strong>Conjuros de Círculo (Circle Spells)</strong>: Los Círculos Druídicos (subclases) siguen otorgando conjuros adicionales en ciertos niveles. Estos conjuros siempre están preparados y no cuentan contra el número de conjuros que puedes preparar cada día, similar a los conjuros de Dominio del Clérigo o de Origen del Hechicero.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-changed">Círculos Druídicos (Subclases)</span></h4>
+                    <p class="mb-2">Todos los círculos serán revisados para interactuar con las nuevas mecánicas de Forma Salvaje (plantillas) y las listas de conjuros actualizadas, buscando ofrecer estilos de juego más diferenciados.</p>
+                    <ul class="mb-3">
+                        <li><strong>Círculo de la Luna</strong>:
+                            <ul class="mt-2">
+                                <li>Sigue siendo el <span class="highlight-term">especialista en Forma Salvaje</span>.</li>
+                                <li>Probablemente podrá usar Forma Salvaje como <span class="highlight-term">acción adicional</span> desde niveles tempranos.</li>
+                                <li>Obtendrá acceso a <span class="highlight-term">plantillas de Forma Salvaje más poderosas</span> o versátiles antes que otros Druidas, o podrá mejorar las plantillas base de formas únicas (ej. más PG, daño adicional, habilidades especiales como ataques múltiples o regeneración).</li>
+                                <li>A niveles altos, es el candidato más probable para poder <span class="highlight-term">lanzar algunos conjuros druídicos</span> mientras está en Forma Salvaje.</li>
+                                <li>La característica de curación como acción adicional al usar un espacio de conjuro en Forma Salvaje (Combat Wild Shape) probablemente se mantendrá o se adaptará.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Círculo de la Tierra</strong>:
+                            <ul class="mt-2">
+                                <li>Se enfoca más en la <span class="highlight-term">conjuración</span> y la conexión con diferentes entornos naturales.</li>
+                                <li>Su característica <span class="highlight-term">Recuperación Natural (Natural Recovery)</span> para recuperar espacios de conjuro en un descanso corto probablemente se mantendrá.</li>
+                                <li>Sus conjuros de círculo y características se centrarán en dominar aspectos mágicos de diferentes tipos de terreno (ártico, costa, desierto, bosque, pradera, montaña, pantano, Underdark), otorgando diferentes listas de conjuros y beneficios según el terreno elegido o la especialización.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Círculo de las Esporas (Circle of Spores)</strong>:
+                             <ul class="mt-2">
+                                <li>Se centra en el ciclo de la vida y la muerte, usando esporas fúngicas.</li>
+                                <li>Su característica <span class="highlight-term">Simbiosis Fúngica (Symbiotic Entity)</span>, que usa un uso de Forma Salvaje para potenciar al druida con PG temporales y daño necrótico adicional, será clave. Podría interactuar de formas nuevas con el sistema de plantillas o tener opciones de transformación alternativas.</li>
+                                <li>Sus conjuros de círculo incluirán magia nigromántica y de veneno.</li>
+                             </ul>
+                        </li>
+                        <li><strong>Círculo de las Estrellas (Circle of Stars)</strong>:
+                             <ul class="mt-2">
+                                <li>Se inspira en el poder del cosmos. Su característica <span class="highlight-term">Forma Estelar (Starry Form)</span>, que usa un uso de Forma Salvaje para adoptar una constelación (Arquero, Cáliz, Dragón) con diferentes beneficios, será central.</li>
+                                <li>Probablemente mantendrá su capacidad de guía y augurio, y sus conjuros de círculo reflejarán temas celestiales y de adivinación.</li>
+                             </ul>
+                        </li>
+                         <li><strong>Círculo del Pastor (Circle of the Shepherd)</strong>:
+                             <ul class="mt-2">
+                                <li>Se enfoca en proteger a las criaturas de la naturaleza y convocar espíritus totémicos.</li>
+                                <li>Su característica <span class="highlight-term">Espíritu Totémico (Spirit Totem)</span> que otorga auras beneficiosas (Oso, Halcón, Unicornio) será su rasgo distintivo.</li>
+                                 <li>Probablemente tendrá mejoras en los conjuros de convocación de bestias o espíritus.</li>
+                             </ul>
+                        </li>
+                    </ul>
+
+                    <h4><span class="badge badge-changed">Otras Características Fundamentales</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Lenguaje Druídico (Druidic)</strong>: Se mantiene como el lenguaje secreto de los druidas.</li>
+                        <li><strong>Cuerpo Atemporal (Timeless Body)</strong>: A nivel 18, el envejecimiento del druida se ralentiza.</li>
+                        <li><strong>Bestia y Hoja (Beast Spells / Archdruid)</strong>: La característica de nivel 18 que permitía lanzar muchos conjuros druídicos en forma de bestia probablemente se modificará o se integrará en la revisión del Círculo de la Luna para niveles altos. La característica de nivel 20 (Archidruida), que permitía usos ilimitados de Forma Salvaje, podría ser revisada para ofrecer un poder culminante diferente pero igualmente impactante, quizás ligado a un dominio supremo sobre las plantillas de Forma Salvaje o la magia Primordial.</li>
+                    </ul>
+
+                    <p class="mt-3"><strong>Sensación General del Nuevo Druida</strong>: La Forma Salvaje será más ágil de usar en la mesa y escalará de manera más consistente con el nivel del personaje, aunque con una variedad de formas inicial posiblemente menor hasta que se desbloqueen más plantillas o mejoras. Como lanzador de conjuros, se beneficia de la claridad de la lista Primordial y de los conjuros de círculo siempre preparados, haciéndolo un poderoso controlador y apoyo con una fuerte identidad temática.</p>
+                </div>
+                
+                 <div id="tab-guerrero" class="tab-content card"> <!-- Ejemplo de cómo añadir otra clase -->
+                    <h3 class="font-special"><span class="badge">Guerrero (Fighter)</span> - El Maestro de las Armas Versátil</h3>
+                    <p class="mb-4">El Guerrero en la revisión de 2024 se solidifica como el combatiente marcial por excelencia, con un énfasis en la nueva mecánica de <span class="highlight-term">Maestría con Armas</span> y una mayor versatilidad táctica.</p>
+                    
+                    <h4><span class="badge badge-new">Maestría con Armas (Weapon Mastery)</span></h4>
+                    <ul class="mb-3">
+                        <li><strong>Núcleo de la Identidad Marcial</strong>: Los Guerreros son los principales usuarios de esta nueva mecánica. Obtienen acceso a múltiples propiedades de maestría y pueden aplicarlas a sus armas.</li>
+                        <li><strong>Flexibilidad Táctica</strong>: Una característica distintiva del Guerrero es su capacidad para <span class="highlight-term">cambiar las propiedades de maestría</span> de sus armas durante un descanso corto o largo, permitiéndoles adaptarse a diferentes situaciones de combate. Por ejemplo, pueden cambiar una espada larga de "Hender" a "Empujar" si necesitan más control.</li>
+                        <li><strong>Progresión</strong>: A medida que suben de nivel, los Guerreros pueden aprender a aplicar más propiedades de maestría o usar versiones mejoradas de estas.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-changed">Estilos de Combate (Fighting Styles)</span></h4>
+                    <ul class="mb-3">
+                        <li>Siguen obteniendo un Estilo de Combate a nivel 1.</li>
+                        <li>En la revisión 2024, los Estilos de Combate podrían ofrecerse como <span class="highlight-term">dotes gratuitas</span> en ciertos niveles, o la lista de estilos disponibles podría expandirse o ajustarse.</li>
+                        <li>Ejemplos clásicos: Arquería, Defensa, Duelo, Combate con Armas Grandes, Protección, Combate con Dos Armas.</li>
+                    </ul>
+
+                    <h4><span class="badge badge-changed">Segundo Aliento (Second Wind)</span></h4>
+                    <ul class="mb-3">
+                        <li>Permite recuperar puntos de golpe como acción adicional (1d10 + nivel de Guerrero).</li>
+                        <li>Revisión 2024: Además de la curación, introduce <span class="highlight-term">Mente Táctica (Tactical Mind)</span>. Al usar Segundo Aliento, el Guerrero también puede elegir ganar ventaja en su próxima prueba de Inteligencia, Sabiduría o Carisma que realice antes del final de su próximo turno. Esto añade utilidad fuera del combate directo.</li>
+                        <li>Se recupera con un descanso corto o largo.</li>
+                    </ul>
+
+                     <h4><span class="badge badge-changed">Oleada de Acción (Action Surge)</span></h4>
+                    <ul class="mb-3">
+                        <li>A nivel 2, permite tomar una acción adicional en tu turno. Sigue siendo una de las características más potentes y definitorias del Guerrero.</li>
+                        <li>Se recupera con un descanso corto o largo. A niveles altos (ej. 17), se obtiene un segundo uso entre descansos.</li>
+                    </ul>
+
+                     <h4><span class="badge badge-changed">Ataque Adicional (Extra Attack)</span></h4>
+                    <ul class="mb-3">
+                        <li>Los Guerreros siguen obteniendo múltiples incrementos a esta característica, permitiéndoles hacer más ataques con la acción de Atacar (a niveles 5, 11 y 20 en la versión de 2014; la progresión podría ajustarse).</li>
+                    </ul>
+                    
+                    <h4><span class="badge badge-changed">Arquetipos Marciales (Subclases)</span></h4>
+                     <p class="mb-2">Todos los arquetipos serán actualizados para interactuar con las Maestrías con Armas y ofrecer mejoras significativas.</p>
+                    <ul class="mb-3">
+                        <li><strong>Campeón (Champion)</strong>: Probablemente se mantendrá como la opción más sencilla, enfocada en mejorar los golpes críticos (quizás crítico con 19-20 antes) y la capacidad atlética. Podría ganar nuevas formas de aplicar su superioridad física.</li>
+                        <li><strong>Maestro de Batalla (Battle Master)</strong>: Sus <span class="highlight-term">Maniobras</span> y dados de superioridad seguirán siendo su núcleo, ofreciendo control y efectos adicionales en combate. La lista de maniobras podría expandirse o ajustarse, y la forma de recuperar dados de superioridad podría ser más flexible.</li>
+                        <li><strong>Caballero Arcano (Eldritch Knight)</strong>: Su mezcla de combate y magia arcana (principalmente Abjuración y Evocación) se mantendrá. La forma en que enlaza sus ataques con conjuros (War Magic) podría ser refinada.</li>
+                         <li><strong>Otros Arquetipos (Samurai, Caballero, Psi Warrior, Rune Knight, etc.)</strong>: Se actualizarán desde suplementos, asegurando que sus mecánicas únicas sigan siendo relevantes y se integren bien con las nuevas reglas base.</li>
+                    </ul>
+                     <p class="mt-3"><strong>Sensación General del Nuevo Guerrero</strong>: Aún más personalizable y tácticamente profundo gracias a las Maestrías con Armas, sin perder su robustez y capacidad de daño sostenido. Sigue siendo una excelente opción tanto para jugadores nuevos como experimentados.</p>
+                </div>
+
+            </div>
+        </section>
+        
+        <section id="conclusion" class="card fade-in-section">
+            <h2 class="section-title font-special">Conclusión Final</h2>
+            <p>La revisión de 2024 de Dungeons & Dragons representa una evolución considerable, diseñada para enriquecer la experiencia de juego para todos. Si bien mantiene una fuerte compatibilidad con el material de la 5ª Edición publicado anteriormente, introduce cambios profundos y bien pensados para mejorar la creación de personajes, ofrecer un mayor equilibrio entre las clases, refinar mecánicas de juego clave y hacer que las reglas sean más accesibles e intuitivas. Las guías interactivas de combate y magia, junto con los innovadores asistentes de IA para la generación de trasfondos y la consulta de reglas, buscan facilitar la entrada de nuevos jugadores a este fascinante universo, al mismo tiempo que ofrecen herramientas valiosas para los veteranos. Esta plataforma aspira a ser un recurso vivo y en constante mejora para la comunidad de D&D.</p>
+            <p class="mt-2">Para obtener todos los detalles completos, oficiales y la experiencia de juego definitiva, asegúrate de consultar los nuevos manuales básicos de Dungeons & Dragons 2024 cuando estén disponibles.</p>
+        </section>
+    </main>
+
+    <button id="scrollTopBtn" aria-label="Volver arriba">
+        <svg data-lucide="arrow-up" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+    </button>
+
+    <footer class="text-center p-6 mt-8 bg-gray-800 text-gray-300 transition-colors duration-300">
+        <p>&copy; 2024-2025 Guía D&D Revisión 2024. Información recopilada de fuentes públicas, anuncios oficiales y con ayuda de IA. Dungeons & Dragons es una marca registrada de Wizards of the Coast.</p>
+    </footer>
+
+    <!-- Firebase SDKs -->
+    <script type="module">
+        // Importar funciones de Firebase que necesitarás
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { getAuth, signInAnonymously, onAuthStateChanged, signInWithCustomToken } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { getFirestore, doc, setDoc, getDoc, updateDoc, serverTimestamp, setLogLevel } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+        
+        // --- Configuración y Estado Global ---
+        const firebaseConfig = typeof __firebase_config !== 'undefined' ? JSON.parse(__firebase_config) : null;
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id-dnd-guide'; 
+
+        let app;
+        let auth;
+        let db;
+        let userId = null; 
+        let userPreferencesRef = null;
+
+        // --- Inicialización de Firebase y Autenticación ---
+        async function initializeFirebase() {
+            if (!firebaseConfig) {
+                console.warn("Firebase config is not available. Features like dark mode persistence might not work across sessions.");
+                loadThemeFromLocalStorage(); // Fallback a localStorage
+                initializeLucideIcons(); // Asegurar que los iconos se carguen incluso sin Firebase
+                return;
+            }
+            try {
+                app = initializeApp(firebaseConfig);
+                auth = getAuth(app);
+                db = getFirestore(app);
+                // setLogLevel('debug'); // Descomentar para logs detallados de Firestore
+
+                onAuthStateChanged(auth, async (user) => {
+                    if (user) {
+                        console.log("User is signed in:", user.uid);
+                        userId = user.uid;
+                        userPreferencesRef = doc(db, "artifacts", appId, "users", userId, "preferences", "displaySettings");
+                        await loadThemeFromFirestore(); 
+                    } else {
+                        console.log("User is signed out. Attempting sign-in...");
+                        if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                            try {
+                                await signInWithCustomToken(auth, __initial_auth_token);
+                                console.log("Signed in with custom token.");
+                            } catch (customTokenError) {
+                                console.error("Error signing in with custom token, trying anonymous:", customTokenError);
+                                await signInAnonymously(auth).catch(anonError => console.error("Anonymous sign-in failed:", anonError));
+                            }
+                        } else {
+                            await signInAnonymously(auth).catch(anonError => console.error("Anonymous sign-in failed:", anonError));
+                            console.log("Signed in anonymously (or attempted).");
+                        }
+                    }
+                    initializeLucideIcons(); // Cargar iconos después del estado de autenticación
+                });
+            } catch (error) {
+                console.error("Error initializing Firebase:", error);
+                loadThemeFromLocalStorage(); // Fallback
+                initializeLucideIcons();
+            }
+        }
+        
+        // --- Lógica del Modo Oscuro/Claro ---
+        const themeToggleBtns = [document.getElementById('themeToggleBtnHeader'), document.getElementById('themeToggleBtnSidebar')];
+        const sunIconSVG = `<svg data-lucide="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2"></path><path d="M12 20v2"></path><path d="m4.93 4.93 1.41 1.41"></path><path d="m17.66 17.66 1.41 1.41"></path><path d="M2 12h2"></path><path d="M20 12h2"></path><path d="m6.34 17.66-1.41 1.41"></path><path d="m19.07 4.93-1.41 1.41"></path></svg>`;
+        const moonIconSVG = `<svg data-lucide="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>`;
+
+
+        function applyTheme(isDark) {
+            document.documentElement.classList.toggle('dark', isDark);
+            document.documentElement.classList.toggle('light', !isDark);
+            themeToggleBtns.forEach(btn => {
+                if (btn) btn.innerHTML = isDark ? sunIconSVG : moonIconSVG;
+            });
+        }
+
+        async function saveThemePreference(isDark) {
+            // Guardar en localStorage siempre como respaldo o si Firebase no está listo
+            localStorage.setItem('theme', isDark ? 'dark' : 'light');
+
+            if (userPreferencesRef && auth.currentUser) { 
+                try {
+                    await setDoc(userPreferencesRef, { darkMode: isDark, lastUpdated: serverTimestamp() }, { merge: true });
+                    console.log("Theme preference saved to Firestore.");
+                } catch (error) {
+                    console.error("Error saving theme to Firestore (will rely on localStorage):", error);
+                }
+            } else {
+                 console.warn("Firebase (userPreferencesRef or currentUser) not ready, theme saved only to localStorage.");
+            }
+        }
+        
+        async function loadThemeFromFirestore() {
+            let themeSet = false;
+            if (userPreferencesRef && auth.currentUser) {
+                try {
+                    const docSnap = await getDoc(userPreferencesRef);
+                    if (docSnap.exists() && typeof docSnap.data().darkMode === 'boolean') {
+                        applyTheme(docSnap.data().darkMode);
+                        console.log("Theme loaded from Firestore.");
+                        themeSet = true;
+                    } else {
+                        console.log("No theme preference in Firestore for this user.");
+                    }
+                } catch (error) {
+                    console.error("Error loading theme from Firestore:", error);
+                }
+            }
+            if (!themeSet) { // Si no se cargó de Firestore (o no hay user/ref)
+                loadThemeFromLocalStorage(true); // true para indicar que debe intentar guardar si no existe
+            }
+        }
+
+        function loadThemeFromLocalStorage(trySaveToFirestoreIfMissing = false) {
+            const storedTheme = localStorage.getItem('theme');
+            let isDark;
+            if (storedTheme) {
+                isDark = (storedTheme === 'dark');
+                applyTheme(isDark);
+                console.log("Theme loaded from localStorage.");
+            } else {
+                isDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+                applyTheme(isDark);
+                console.log("No theme in localStorage, using system preference.");
+                if (trySaveToFirestoreIfMissing) { // Solo intentar guardar si es la carga inicial y no había nada
+                    saveThemePreference(isDark); // Guardará en localStorage y intentará en Firestore si está listo
+                }
+            }
+        }
+        
+        themeToggleBtns.forEach(btn => {
+            if(btn) {
+                btn.addEventListener('click', () => {
+                    const isCurrentlyDark = document.documentElement.classList.contains('dark');
+                    const newIsDark = !isCurrentlyDark;
+                    applyTheme(newIsDark); 
+                    saveThemePreference(newIsDark);
+                });
+            }
+        });
+
+        // --- Botón Volver Arriba ---
+        const scrollTopBtn = document.getElementById('scrollTopBtn');
+        if (scrollTopBtn) {
+            window.onscroll = () => {
+                if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+                    scrollTopBtn.classList.add('show');
+                } else {
+                    scrollTopBtn.classList.remove('show');
+                }
+            };
+            scrollTopBtn.addEventListener('click', () => {
+                window.scrollTo({top: 0, behavior: 'smooth'});
+            });
+        }
+
+        // --- Menú Lateral (Sidebar) ---
+        const sidebar = document.getElementById('sidebar');
+        const openSidebarBtn = document.getElementById('openSidebarBtn');
+        const closeSidebarBtn = document.getElementById('closeSidebarBtn');
+        if (sidebar && openSidebarBtn && closeSidebarBtn) {
+            openSidebarBtn.addEventListener('click', () => sidebar.classList.add('open'));
+            closeSidebarBtn.addEventListener('click', () => sidebar.classList.remove('open'));
+            sidebar.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => sidebar.classList.remove('open'));
+            });
+             // Cerrar sidebar si se hace clic fuera de ella (en el overlay implícito)
+            document.addEventListener('click', (event) => {
+                if (sidebar.classList.contains('open') && !sidebar.contains(event.target) && event.target !== openSidebarBtn && !openSidebarBtn.contains(event.target)) {
+                    sidebar.classList.remove('open');
+                }
+            });
+        }
+
+        // --- Acordeones ---
+        const accordionItems = document.querySelectorAll('.accordion-item');
+        accordionItems.forEach(item => {
+            const header = item.querySelector('.accordion-header');
+            const content = item.querySelector('.accordion-content');
+            if (header && content) {
+                header.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    item.classList.toggle('active');
+                    if (item.classList.contains('active')) {
+                        content.style.maxHeight = content.scrollHeight + "px";
+                    } else {
+                        content.style.maxHeight = "0";
+                    }
+                });
+            }
+        });
+
+        // --- Pestañas (Tabs) ---
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        if (tabButtons.length > 0 && tabContents.length > 0) {
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.dataset.tab;
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    tabContents.forEach(content => {
+                        content.classList.toggle('active', content.id === `tab-${tabId}`);
+                    });
+                });
+            });
+        }
+
+        // --- Filtro de Clases ---
+        const classFilterInput = document.getElementById('classFilterInput');
+        if (classFilterInput && tabButtons.length > 0) {
+            classFilterInput.addEventListener('input', (e) => {
+                const searchTerm = e.target.value.toLowerCase().trim();
+                let firstVisibleButton = null;
+                let activeTabStillVisible = false;
+
+                tabButtons.forEach(button => {
+                    const classNames = button.dataset.classname.toLowerCase(); // Usar data-classname
+                    const tabId = button.dataset.tab;
+                    const correspondingContent = document.getElementById(`tab-${tabId}`);
+
+                    if (classNames.includes(searchTerm)) {
+                        button.style.display = ''; 
+                        if (!firstVisibleButton) firstVisibleButton = button;
+                        if (button.classList.contains('active')) activeTabStillVisible = true;
+                    } else {
+                        button.style.display = 'none'; 
+                        if (button.classList.contains('active')) {
+                            button.classList.remove('active');
+                            if(correspondingContent) correspondingContent.classList.remove('active');
+                        }
+                    }
+                });
+
+                if (!activeTabStillVisible && firstVisibleButton) {
+                    firstVisibleButton.classList.add('active');
+                    const firstVisibleContentId = firstVisibleButton.dataset.tab;
+                    document.getElementById(`tab-${firstVisibleContentId}`)?.classList.add('active');
+                } else if (!firstVisibleButton && tabContents.length > 0) { // No hay resultados
+                    tabContents.forEach(tc => tc.classList.remove('active')); // Ocultar todo contenido
+                }
+            });
+        }
+
+        // --- Animaciones de Entrada al Hacer Scroll ---
+        const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
+        const fadeInObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, observerOptions);
+        document.querySelectorAll('.fade-in-section').forEach(section => {
+            fadeInObserver.observe(section);
+        });
+        
+        // --- Lógica de Gemini API para Trasfondos ---
+        const generateBackgroundBtn = document.getElementById('generateBackgroundBtn');
+        const backgroundKeywordsInput = document.getElementById('backgroundKeywords');
+        const backgroundResultArea = document.getElementById('backgroundResultArea');
+        const loadingSpinnerBg = document.getElementById('loadingSpinnerBg');
+        const backgroundErrorMsg = document.getElementById('backgroundError');
+
+        if (generateBackgroundBtn) {
+            generateBackgroundBtn.addEventListener('click', async () => {
+                const keywords = backgroundKeywordsInput.value.trim();
+                if (!keywords) {
+                    backgroundErrorMsg.textContent = 'Por favor, introduce algunas palabras clave.';
+                    backgroundErrorMsg.style.display = 'block'; backgroundResultArea.style.display = 'none'; return;
+                }
+                generateBackgroundBtn.disabled = true; loadingSpinnerBg.style.display = 'inline-block';
+                backgroundResultArea.style.display = 'none'; backgroundResultArea.textContent = ''; backgroundErrorMsg.style.display = 'none';
+                
+                const prompt = `Eres un Dungeon Master creativo y experto en Dungeons & Dragons. Basado en las siguientes palabras clave, genera una breve historia de trasfondo para un personaje de D&D (máximo 150 palabras). La historia debe ser evocadora y proporcionar una base sólida. Además, sugiere claramente un (1) Rasgo de Personalidad, un (1) Ideal, un (1) Vínculo y un (1) Defecto que encajen con la historia y las palabras clave. Formatea estas cuatro sugerencias (Rasgo, Ideal, Vínculo, Defecto) de manera clara, usando negritas para los títulos y una breve descripción para cada uno. Palabras clave: "${keywords}"`;
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory }; const geminiApiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                    if (!response.ok) { let errorDetails = `Error del servidor: ${response.status}`; try { const errorData = await response.json(); errorDetails += ` - ${errorData.error?.message || JSON.stringify(errorData)}`; } catch (e) {} throw new Error(errorDetails); }
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                        backgroundResultArea.innerHTML = result.candidates[0].content.parts[0].text.replace(/\n/g, '<br>'); // Reemplazar saltos de línea con <br> para HTML
+                        backgroundResultArea.style.display = 'block';
+                    } else { console.error('Respuesta inesperada de la API (Trasfondos):', result); throw new Error('No se pudo obtener una respuesta válida de la IA para trasfondos.'); }
+                } catch (error) {
+                    console.error('Error al generar trasfondo:', error);
+                    backgroundErrorMsg.textContent = `Error: ${error.message || "No se pudo conectar con el servicio de IA."}`; backgroundErrorMsg.style.display = 'block';
+                } finally { generateBackgroundBtn.disabled = false; loadingSpinnerBg.style.display = 'none'; }
+            });
+        }
+
+        // --- Lógica de Gemini API para Consultas de Reglas ---
+        const askRuleBtn = document.getElementById('askRuleBtn');
+        const ruleQueryInput = document.getElementById('ruleQueryInput');
+        const ruleResultArea = document.getElementById('ruleResultArea');
+        const loadingSpinnerRule = document.getElementById('loadingSpinnerRule');
+        const ruleErrorMsg = document.getElementById('ruleError');
+
+        if (askRuleBtn) {
+            askRuleBtn.addEventListener('click', async () => {
+                const query = ruleQueryInput.value.trim();
+                if (!query) {
+                    ruleErrorMsg.textContent = 'Por favor, introduce tu pregunta sobre las reglas.';
+                    ruleErrorMsg.style.display = 'block'; ruleResultArea.style.display = 'none'; return;
+                }
+                askRuleBtn.disabled = true; loadingSpinnerRule.style.display = 'inline-block';
+                ruleResultArea.style.display = 'none'; ruleResultArea.textContent = ''; ruleErrorMsg.style.display = 'none';
+                
+                const prompt = `Eres un Dungeon Master experto y preciso, especializado en las reglas de Dungeons & Dragons Revisión 2024. Un usuario tiene la siguiente pregunta sobre las reglas: "${query}" Por favor, responde a esta pregunta de forma clara, concisa y basándote estrictamente en las reglas de la Revisión 2024 de D&D. Si la pregunta es ambigua o requiere una interpretación del DM, indícalo. Si la pregunta se refiere a una regla que no ha cambiado significativamente desde 5e (2014), puedes mencionarlo brevemente, pero céntrate en la perspectiva de la revisión 2024. Evita opiniones personales y cíñete a las reglas como están escritas o comúnmente interpretadas para la Revisión 2024. Proporciona ejemplos si ayudan a clarificar la regla. Formatea la respuesta para web, usando párrafos y listas si es necesario.`;
+                let chatHistory = [{ role: "user", parts: [{ text: prompt }] }];
+                const payload = { contents: chatHistory }; const geminiApiKey = "";
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${geminiApiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+                    if (!response.ok) { let errorDetails = `Error del servidor: ${response.status}`; try { const errorData = await response.json(); errorDetails += ` - ${errorData.error?.message || JSON.stringify(errorData)}`; } catch (e) {} throw new Error(errorDetails); }
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                        ruleResultArea.innerHTML = result.candidates[0].content.parts[0].text.replace(/\n/g, '<br>'); // Reemplazar saltos de línea
+                        ruleResultArea.style.display = 'block';
+                    } else { console.error('Respuesta inesperada de la API (Reglas):', result); throw new Error('No se pudo obtener una respuesta válida de la IA para la consulta de reglas.'); }
+                } catch (error) {
+                    console.error('Error al consultar regla:', error);
+                    ruleErrorMsg.textContent = `Error: ${error.message || "No se pudo conectar con el servicio de IA."}`; ruleErrorMsg.style.display = 'block';
+                } finally { askRuleBtn.disabled = false; loadingSpinnerRule.style.display = 'none'; }
+            });
+        }
+        
+        function initializeLucideIcons() {
+             // Ya no se usa la librería global 'lucide', los SVGs están en línea o en variables.
+             // Esta función puede quedar vacía o usarse para inicializar otros componentes si es necesario.
+        }
+
+        // --- Inicializar la App ---
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeFirebase(); // Esto también llamará a loadTheme y initializeLucideIcons
+        });
+
+    </script>
+</body>
+</html>
